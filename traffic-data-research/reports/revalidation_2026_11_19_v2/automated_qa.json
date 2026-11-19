@@ -1,0 +1,90 @@
+{
+  "all_63_province_changes_verified": [
+    {
+      "check": "row_count",
+      "status": "PASS",
+      "detail": "63 rows"
+    },
+    {
+      "check": "fully_null_columns",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "duplicate_rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "column_names",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "ten_traffic_discoveries_rechecked": [
+    {
+      "check": "row_count",
+      "status": "PASS",
+      "detail": "10 rows"
+    },
+    {
+      "check": "fully_null_columns",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "duplicate_rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "column_names",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "GT07_weighting_sensitivity": [
+    {
+      "check": "row_count",
+      "status": "PASS",
+      "detail": "5 rows"
+    },
+    {
+      "check": "fully_null_columns",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "duplicate_rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "column_names",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "national_reconciliation": [
+    {
+      "check": "row_count",
+      "status": "PASS",
+      "detail": "9 rows"
+    },
+    {
+      "check": "fully_null_columns",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "duplicate_rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "column_names",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

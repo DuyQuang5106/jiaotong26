@@ -1,0 +1,2 @@
+﻿column,outlier_count,outlier_pct,min,max,mean,iqr_outliers,zscore_outliers
+velocity,457,0.5,0,200,20.7548,336,457

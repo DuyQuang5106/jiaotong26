@@ -1,0 +1,5 @@
+﻿column,dtype,null_count,null_pct,warn_threshold,fail_threshold,status
+value,float64,2,0.31,5.0,20.0,PASS
+region,object,0,0.0,5.0,20.0,PASS
+year,int64,0,0.0,5.0,20.0,PASS
+metric,object,0,0.0,5.0,20.0,PASS

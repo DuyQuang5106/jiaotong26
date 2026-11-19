@@ -1,0 +1,8 @@
+{
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "pandas": "2.3.3",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "note": "existing Python 3.10 environment retained; methodological guidance used; not claimed to match newer pinned skill stacks"
+}

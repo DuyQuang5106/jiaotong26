@@ -1,0 +1,143 @@
+Shape:   639 rows × 4 columns
+Memory:  0.11 MB
+
+Column types:
+  object          2
+  int64           1
+  float64         1
+
+Per-column info:
+          dtype  non_null  null_pct  unique   sample
+region   object       639      0.00      71  TỔNG SỐ
+year      int64       639      0.00       3     2022
+metric   object       639      0.00       3  crashes
+value   float64       637      0.31     403  11457.0
+
+Sample (3 rows):
+   region  year   metric  value
+Thái Bình  2023 injuries  199.0
+  Phú Yên  2022 injuries   97.0
+ An Giang  2023  crashes  226.0
+
+Shape:   90,938 rows × 4 columns
+Memory:  9.11 MB
+
+Column types:
+  int64           3
+  object          1
+
+Per-column info:
+             dtype  non_null  null_pct  unique                    sample
+_id          int64     90938       0.0   90938                         0
+updated_at  object     90938       0.0   59422  2020-07-03T14:55:31.869Z
+segment_id   int64     90938       0.0   10027                     24845
+velocity     int64     90938       0.0     179                        20
+
+Sample (3 rows):
+  _id               updated_at  segment_id  velocity
+30891 2020-08-03T00:20:29.691Z       22756        29
+20241 2020-08-03T00:11:30.667Z       29243        16
+62166 2020-12-12T11:08:07.882Z       39038         1
+
+Shape:   107 rows × 9 columns
+Memory:  0.11 MB
+
+Column types:
+  object          8
+  int64           1
+
+Per-column info:
+                 dtype  non_null  null_pct  unique                                                                                                                                                                                                                                                                                                                                                                                                                sample
+record_id        int64       107      0.00     107                                                                                                                                                                                                                                                                                                                                                                                                                     1
+road            object       107      0.00      19                                                                                                                                                                                                                                                                                                                                                                                                                 QL.4G
+start_chainage  object       107      0.00     105                                                                                                                                                                                                                                                                                                                                                                                                              Km22+280
+end_chainage    object       107      0.00     107                                                                                                                                                                                                                                                                                                                                                                                                              Km22+430
+commune         object       107      0.00       9                                                                                                                                                                                                                                                                                                                                                                                                               Mai Sơn
+condition       object       107      0.00      67  Đoạn tuyến nằm trong đường cong nằm có bán kính đường cong nhỏ (R≤15,0m), bên phải là taluy âm (vực sâu) bên trái là taluy dương có chiều cao: H=5,0m -7,0m, tầm nhìn bị hạn chế. Hiện tại, trong phạm vị đoạn tuyến đã bố trí biển báo hiệu đường bộ W.201 “Chỗ ngoặt nguy hiểm”, W.215 “Kè, vực sâu phía trước” (trước hai đầu đoạn tuyến), gương cầu lồi, vạch 1.1  và hộ lan phòng hộ bên (hộ lan tôn lượn sóng)
+treated         object        19     82.24       7                                                                                                                                                                                                                                                                                                            Thuộc dự án năm 2025: Xử lý các vị trí đường cong bán kính nhỏ để đảm bảo ATGT trên đoạn Km22+200-Km22+499
+untreated       object        89     16.82       4                                                                                                                                                                                                                                                                                                                                                                  Đã đề xuất thực hiện BDTX năm 2026 (Sơn gờ giảm tốc)
+note            object        20     81.31       3                                                                                                                                                                                                                                                                                                                                                                                      Nhánh QL.6 - Vân Hồ - Quang Minh
+
+Sample (3 rows):
+ record_id           road start_chainage end_chainage    commune                                                                                                                                                                                                                                                                                                                                        condition treated                                                                                                                     untreated note
+        77 ĐT.108 (TC-MB)       Km33+900     Km34+100 Thuận Châu                                                                                                                                     Mặt bằng đoạn tuyến là trong đường cong ôm đồi, có độ dốc dọc lớn, bên phải tuyến (phía ta luy dương) là rừng tự nhiên, bên trái tuyến (phía la luy ân) là vực sâu, mái taluy dương cao khoảng từ 20 đến 25m     NaN Do nguồn kinh phí khắc phục lớn, nằm ngoài kế hoạch bảo trì, Sở Xây dựng đã trình đưa vào kế hoạch đầu tư công (GĐ 2026-2030)  NaN
+        11        QL.279D       Km79+500     Km79+700   Mường La Đoạn tuyến nằm trong đường cong liên tiếp có bán kính nhỏ và độ dốc dọc lớn. Hiện tại vị trí đoạn tuyến đã bố trí biển báo W.202 "Nhiều chỗ ngoặt nguy hiểm liên tiếp" và bên phía taluy âm là vực sâu đã bố trí hộ lan phòng hộ bên (hộ lan tôn lượn sóng), bên trái tuyến là mái taluy dương có chiều cao, kích thước lớn làm hạn chế tầm nhìn     NaN                                                                                          Đã đề xuất kế hoạch bảo trì năm 2026  NaN
+         5          QL.4G       Km40+240     Km40+360    Sông Mã                                                                                                                          Đoạn tuyến có độ dốc dọc lớn và nằm trong đường cong nằm liên tiếp có bán kính đường nhỏ, bên phải tuyến là taluy dương có chiều cao và kích thước lớn làm hạn chế tầm nhìn của người điều khiển phương tiện giao thông     NaN                                                                                          Đã đề xuất kế hoạch bảo trì năm 2026  NaN
+
+Shape:   58 rows × 5 columns
+Memory:  0.02 MB
+
+Column types:
+  object          4
+  int64           1
+
+Per-column info:
+            dtype  non_null  null_pct  unique            sample
+record_id   int64        58       0.0      58                 1
+road       object        58       0.0      17             QL.4G
+chainage   object        58       0.0      58          Km16+050
+place      object        58       0.0      27     xã Chiềng Mai
+note       object        58       0.0      10  Sạt lở ta luy âm
+
+Sample (3 rows):
+ record_id   road            chainage            place                                                note
+         1  QL.4G            Km16+050    xã Chiềng Mai                                    Sạt lở ta luy âm
+         6  QL.4G Km43+520 - Km43+600 xã Chiềng Khương Cung sạt lớn tiềm ẩn nguy cơ mất an toàn giao thông
+        35 ĐT.106     Km7+310-Km7+360    Xã Mường Giôn                                 Sạt lở ta luy dương
+
+Shape:   73 rows × 22 columns
+Memory:  0.21 MB
+
+Column types:
+  object          22
+
+Per-column info:
+                                      dtype  non_null  null_pct  unique                                                                                                                                sample
+idea_id                              object        73       0.0      73                                                                                                                              IDEA-001
+competition                          object        73       0.0       2                                                                                                               Sáng kiến ATGT Việt Nam
+year                                 object        73       0.0       4                                                                                                                                  2025
+scope                                object        73       0.0       2                                                                                                                         Cùng cuộc thi
+theme_original                       object        73       0.0      10                                                                                                                  Lướt mạng – Mất mạng
+title_public                         object        73       0.0      73                                                                                         Hệ thống hỗ trợ giám sát trạng thái người lái
+status_verified                      object        73       0.0       4                                                                                                                               AWARDED
+award_level_verified                 object        73       0.0       6                                                                                                                                   Nhì
+top3_online_vote_2025                object        73       0.0       2                                                                                                                                   YES
+solution_cluster_inferred            object        73       0.0       8                                                                                                                 Giám sát vi phạm / AI
+mechanism_short                      object        73       0.0      11                                                                                              Giám sát và cảnh báo hành vi qua dữ liệu
+mechanism_evidence                   object        73       0.0       2                                                                                                                            TỪ TIÊU ĐỀ
+data_needed_for_evaluation_proposed  object        73       0.0       9                                                                                   Video gắn nhãn; số vi phạm; false positive; bảo mật
+2026_theme_similarity_proposed       object        73       0.0       6                                                                              1 – Đường đông vẫn thông (đối chiếu; có thể lệch chủ đề)
+linked_GT_ids_proposed               object        73       0.0       8                                                                                                                     GT-02;GT-08;GT-15
+research_question_proposed           object        73       0.0       5                                 Nếu triển khai giải pháp này, cải thiện chỉ số an toàn nào so với phương án gốc, đo bằng mẫu độc lập?
+caution                              object        73       0.0       9                                    Suy từ tiêu đề, chưa có hồ sơ kỹ thuật; cần kiểm tra trước khi khẳng định tính mới hoặc hiệu quả. 
+entry_evidence_url                   object        73       0.0       8  https://dantri.com.vn/thoi-su/30-tac-pham-vao-vong-binh-chon-online-sang-kien-an-toan-giao-thong-viet-nam-2025-20260122185928727.htm
+award_evidence_url                   object        73       0.0       9                              https://sangkienatgt.dantri.com.vn/nhom-sinh-vien-viet-phat-trien-cong-nghe-giam-sat-nguoi-lai-tien-tien
+additional_detail_url                object        73       0.0       3                              https://sangkienatgt.dantri.com.vn/nhom-sinh-vien-viet-phat-trien-cong-nghe-giam-sat-nguoi-lai-tien-tien
+source_ids                           object        73       0.0      13                                                                                                                       S01 | S05 | S04
+last_reviewed                        object        73       0.0       1                                                                                                                            2026-11-19
+
+Sample (3 rows):
+ idea_id             competition year         scope       theme_original                                                        title_public             status_verified         award_level_verified top3_online_vote_2025 solution_cluster_inferred                                          mechanism_short mechanism_evidence                     data_needed_for_evaluation_proposed                           2026_theme_similarity_proposed        linked_GT_ids_proposed                                                                                                                              research_question_proposed                                                                                                                                                                                          caution                                                                                                                   entry_evidence_url                                                                                                            award_evidence_url additional_detail_url      source_ids last_reviewed
+IDEA-005 Sáng kiến ATGT Việt Nam 2025 Cùng cuộc thi Lướt mạng – Mất mạng Tuân thủ chấp hành luật giao thông đường bộ khi tham gia giao thông SHORTLIST_NO_RECORDED_AWARD                                                 NO       Khác / truyền thông                            Cần xem hồ sơ gốc để xác định         TỪ TIÊU ĐỀ                    Hồ sơ giải pháp / dữ liệu thử nghiệm          Chỉ là prior art, không khớp trực tiếp 3 chủ đề                   GT-01;GT-02                                                   Nếu triển khai giải pháp này, cải thiện chỉ số an toàn nào so với phương án gốc, đo bằng mẫu độc lập? Suy từ tiêu đề, chưa có hồ sơ kỹ thuật; cần kiểm tra trước khi khẳng định tính mới hoặc hiệu quả. Không có tên trong danh sách vinh danh, KHÔNG suy ra điểm thấp hay bị loại vì lý do kỹ thuật.  https://dantri.com.vn/thoi-su/30-tac-pham-vao-vong-binh-chon-online-sang-kien-an-toan-giao-thong-viet-nam-2025-20260122185928727.htm                           https://sangkienatgt.dantri.com.vn/19-tac-pham-duoc-vinh-danh-tai-sang-kien-an-toan-giao-thong-2025                             S01 | S02    2026-11-19
+IDEA-064 Sáng kiến ATGT Việt Nam 2022 Cùng cuộc thi            Công nghệ        Hệ thống hỗ trợ điều chỉnh thời gian đèn tín hiệu giao thông                     AWARDED                 Khuyến khích                    NO  Điều tiết / đèn tín hiệu Điều chỉnh tín hiệu, bố trí làn hoặc thông tin điều phối         TỪ TIÊU ĐỀ     Lưu lượng theo hướng; queue; delay; tín hiệu; video 1 – Đường đông vẫn thông (đối chiếu; có thể lệch chủ đề) GT-04;GT-06;GT-07;GT-15;GT-16 Nếu đổi cơ chế đèn hoặc tổ chức làn, delay/p95 hàng chờ và số xung đột/1.000 xe có giảm so với điều khiển cố định trên cùng nhu cầu và điều kiện không?                                                                                               Suy từ tiêu đề, chưa có hồ sơ kỹ thuật; cần kiểm tra trước khi khẳng định tính mới hoặc hiệu quả.         https://dantri.com.vn/thoi-su/cac-tac-pham-dat-giai-cao-nhat-cuoc-thi-sang-kien-an-toan-giao-thong-2022-20221227192604875.htm https://dantri.com.vn/thoi-su/cac-tac-pham-dat-giai-cao-nhat-cuoc-thi-sang-kien-an-toan-giao-thong-2022-20221227192604875.htm                                   S09    2026-11-19
+IDEA-019 Sáng kiến ATGT Việt Nam 2025 Cùng cuộc thi   Điền vào chỗ trống                                          Điểm nhấn Cảnh báo điểm mù                     AWARDED Có giải - hạng chưa xác minh                   YES         Điểm mù / va chạm               Thiết bị/cảnh báo hỗ trợ nhận diện nguy cơ         TỪ TIÊU ĐỀ Video / quỹ đạo xe / khoảng cách, bằng chứng thử nghiệm              1 – Đường đông vẫn thông (nếu tại nút giao)             GT-08;GT-09;GT-04                    Độ nhạy phát hiện và số cảnh báo sai khi xe máy đi cạnh xe tải theo tình huống/độ sáng/mưa; có giảm near-miss so với không cảnh báo?                                                                                               Suy từ tiêu đề, chưa có hồ sơ kỹ thuật; cần kiểm tra trước khi khẳng định tính mới hoặc hiệu quả.  https://dantri.com.vn/thoi-su/30-tac-pham-vao-vong-binh-chon-online-sang-kien-an-toan-giao-thong-viet-nam-2025-20260122185928727.htm                           https://sangkienatgt.dantri.com.vn/19-tac-pham-duoc-vinh-danh-tai-sang-kien-an-toan-giao-thong-2025                       S01 | S02 | S04    2026-11-19
+
+Shape:   404 rows × 3 columns
+Memory:  0.01 MB
+
+Column types:
+  float64         3
+
+Per-column info:
+              dtype  non_null  null_pct  unique  sample
+window                                                 
+peak        float64       404       0.0      85    20.0
+midday      float64       404       0.0      80    30.0
+difference  float64       404       0.0     100   -10.0
+
+Sample (3 rows):
+ peak  midday  difference
+ 48.0    49.0        -1.0
+ 50.0    49.0         1.0
+ 12.5    31.0       -18.5
+

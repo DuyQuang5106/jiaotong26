@@ -1,0 +1,6 @@
+﻿estimator,estimate,unit_count
+equal_day_mean,-3.4591563737366524,26
+equal_segment_day_mean,-0.019801980198019802,404
+median_day_mean,0.0,26
+mean_days_with_at_least_2_pairs,1.447885237935947,18
+mean_days_with_at_least_5_pairs,0.5752769961164392,13

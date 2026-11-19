@@ -1,0 +1,194 @@
+[
+  {
+    "item": "1.1",
+    "question_vi": "Câu hỏi thực của người dùng",
+    "status": "PASS",
+    "evidence_vi": "10 phát hiện + 10 ứng viên, ưu tiên chứng cứ; giữ 10 mẫu hình cũ."
+  },
+  {
+    "item": "1.2",
+    "question_vi": "Ranh giới phạm vi",
+    "status": "PASS",
+    "evidence_vi": "Không suy AICC22/benchmark thành hiện trạng Việt Nam."
+  },
+  {
+    "item": "1.3",
+    "question_vi": "Thời kỳ đúng đề bài",
+    "status": "CAVEAT",
+    "evidence_vi": "Dữ liệu lịch sử được ghi đúng kỳ; chưa có baseline 2026."
+  },
+  {
+    "item": "1.4",
+    "question_vi": "Định nghĩa thuật ngữ",
+    "status": "PASS",
+    "evidence_vi": "Ứng viên, ngách, bản ghi nguy cơ, số vụ khác nguy cơ/exposure."
+  },
+  {
+    "item": "2.1",
+    "question_vi": "Nguồn được xác định",
+    "status": "PASS",
+    "evidence_vi": "22 mã đối chiếu; URL/hash/provenance được giữ."
+  },
+  {
+    "item": "2.2",
+    "question_vi": "Freshness",
+    "status": "CAVEAT",
+    "evidence_vi": "Kỳ cũ/không có SLA; dùng mô tả, không triển khai."
+  },
+  {
+    "item": "2.3",
+    "question_vi": "Lineage",
+    "status": "PASS",
+    "evidence_vi": "Raw→processed→recheck; hash trực tiếp và manifest bảo toàn."
+  },
+  {
+    "item": "2.4",
+    "question_vi": "Quyền truy cập",
+    "status": "PASS",
+    "evidence_vi": "Chỉ đọc snapshot đã có; không thu nguồn/đăng dữ liệu mới."
+  },
+  {
+    "item": "2.5",
+    "question_vi": "Vấn đề nguồn và tác động",
+    "status": "PASS",
+    "evidence_vi": "Báo tổng vùng, mã track, revision tháng, nhãn song ngữ."
+  },
+  {
+    "item": "3.1",
+    "question_vi": "Kiểu join và số dòng",
+    "status": "PASS",
+    "evidence_vi": "FK riêng; đối chiếu multiset; không spatial join mù."
+  },
+  {
+    "item": "3.2",
+    "question_vi": "Grain/cộng trùng",
+    "status": "PASS",
+    "evidence_vi": "63 tỉnh tách tổng vùng; frame/track/ngày không là mẫu độc lập."
+  },
+  {
+    "item": "3.3",
+    "question_vi": "Null",
+    "status": "PASS",
+    "evidence_vi": "Hai ô Khác giữ missing; không điền 0 ngày không quan sát."
+  },
+  {
+    "item": "3.4",
+    "question_vi": "Múi giờ",
+    "status": "PASS",
+    "evidence_vi": "GT-07 UTC→UTC+7 trước ghép."
+  },
+  {
+    "item": "3.5",
+    "question_vi": "Chia 0",
+    "status": "PASS",
+    "evidence_vi": "province_changes giữ NA nếu base 0; có test."
+  },
+  {
+    "item": "3.6",
+    "question_vi": "Mẫu số",
+    "status": "PASS",
+    "evidence_vi": "Previous-year count/contribution/annotation fraction ghi riêng."
+  },
+  {
+    "item": "3.7",
+    "question_vi": "Spot-check ít nhất 3 dòng",
+    "status": "PASS",
+    "evidence_vi": "Đối chiếu toàn bộ chỉ số 6 ví dụ tỉnh với tính lại."
+  },
+  {
+    "item": "4.1",
+    "question_vi": "Cỡ mẫu cho claim",
+    "status": "CAVEAT",
+    "evidence_vi": "Không đủ cho nhân quả/dự báo; đã giới hạn claim."
+  },
+  {
+    "item": "4.2",
+    "question_vi": "Phép kiểm",
+    "status": "CAVEAT",
+    "evidence_vi": "t/CI iid chỉ tái lập kiểm toán; không quảng bá p mới."
+  },
+  {
+    "item": "4.3",
+    "question_vi": "Uncertainty",
+    "status": "PASS",
+    "evidence_vi": "CI cũ giữ cùng giả định; sensitivity không gọi là CI."
+  },
+  {
+    "item": "4.4",
+    "question_vi": "Multiplicity",
+    "status": "N/A",
+    "evidence_vi": "Không thêm family kiểm định hoặc dự đoán giải; EDA không p."
+  },
+  {
+    "item": "4.5",
+    "question_vi": "Nhân quả",
+    "status": "PASS",
+    "evidence_vi": "Đóng góp tỉnh/giải thưởng không được gọi là nguyên nhân."
+  },
+  {
+    "item": "4.6",
+    "question_vi": "Outlier/độ nhạy",
+    "status": "PASS",
+    "evidence_vi": "Giữ toàn bộ, cân khác/LODO được báo không chọn dấu."
+  },
+  {
+    "item": "5.1",
+    "question_vi": "Mỗi kết luận có căn cứ",
+    "status": "PASS",
+    "evidence_vi": "JSON T/C có mã nguồn; ý tưởng giả thuyết tách riêng."
+  },
+  {
+    "item": "5.2",
+    "question_vi": "Không vượt dữ liệu",
+    "status": "PASS",
+    "evidence_vi": "E0 cơ chế của 6 tỉnh; không gán nhóm học sinh/loại xe."
+  },
+  {
+    "item": "5.3",
+    "question_vi": "Bất ngờ được báo",
+    "status": "PASS",
+    "evidence_vi": "GT-09 khớp geometry, GT-07 đổi dấu sensitivity được giữ."
+  },
+  {
+    "item": "5.4",
+    "question_vi": "Giới hạn rõ",
+    "status": "PASS",
+    "evidence_vi": "Novelty/demand/current status đều chưa xác lập."
+  },
+  {
+    "item": "5.5",
+    "question_vi": "Hành động theo kết quả",
+    "status": "PASS",
+    "evidence_vi": "Từng ứng viên có baseline, phép thử và điều kiện dừng."
+  },
+  {
+    "item": "6.1",
+    "question_vi": "Trục/hình",
+    "status": "PASS",
+    "evidence_vi": "?? xem PNG b?ng view_image: nh?n ti?ng Vi?t, tr?c, 174 ng?y thi?u v? 26 ?i?m kh?ng b? che/c?t; metadata/b?ng ngu?n c? s?n."
+  },
+  {
+    "item": "6.2",
+    "question_vi": "Loại biểu đồ",
+    "status": "PASS",
+    "evidence_vi": "Scatter không nối missing, có bảng nguồn."
+  },
+  {
+    "item": "6.3",
+    "question_vi": "Định dạng số",
+    "status": "PASS",
+    "evidence_vi": "Báo cáo làm tròn; JSON giữ precision tính toán."
+  },
+  {
+    "item": "6.4",
+    "question_vi": "Ngôn ngữ",
+    "status": "PASS",
+    "evidence_vi": "Báo cáo tiếng Việt; giải thích thuật ngữ và phạm vi."
+  },
+  {
+    "item": "6.5",
+    "question_vi": "Link/placeholder",
+    "status": "PASS",
+    "evidence_vi": "Ki?m link Markdown kh?ng c? link h?ng; 28 ki?m th? ??t; kh?ng c? placeholder tr?nh b?y."
+  }
+]

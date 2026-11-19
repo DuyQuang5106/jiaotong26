@@ -1,0 +1,10 @@
+﻿column,null_count,null_pct,status
+treated,88,82.24,FAIL
+note,87,81.31,FAIL
+untreated,18,16.82,WARN
+record_id,0,0.0,OK
+road,0,0.0,OK
+commune,0,0.0,OK
+end_chainage,0,0.0,OK
+start_chainage,0,0.0,OK
+condition,0,0.0,OK

@@ -1,0 +1,33 @@
+test_all_63_regions_remain_available (test_discovery.DiscoveryTests) ... ok
+test_elearning_regex_does_not_capture_machine_learning (test_discovery.DiscoveryTests) ... ok
+test_exactly_ten_each_with_traceable_evidence (test_discovery.DiscoveryTests) ... ok
+test_idea_schema_and_unique_ids (test_discovery.DiscoveryTests) ... ok
+test_no_implicit_upgrade_of_proposals (test_discovery.DiscoveryTests) ... ok
+test_whitespace_normalization_does_not_merge_boundaries (test_discovery.DiscoveryTests) ... ok
+test_zero_base_is_not_infinite_or_zero_growth (test_discovery.DiscoveryTests) ... ok
+test_chainage (test_pipeline.ProtocolTests) ... ok
+test_crs (test_pipeline.ProtocolTests) ... ok
+test_date_timezone (test_pipeline.ProtocolTests) ... ok
+test_historical_rates_only (test_pipeline.ProtocolTests) ... ok
+test_inventory (test_pipeline.ProtocolTests) ... ok
+test_provider_archive_checksums (test_pipeline.ProtocolTests) ... ok
+test_rate (test_pipeline.ProtocolTests) ... ok
+test_raw_integrity (test_pipeline.ProtocolTests) ... ok
+test_region_normalization (test_pipeline.ProtocolTests) ... ok
+test_scores (test_pipeline.ProtocolTests) ... ok
+test_excludes_headers_and_form_state (test_public_manifest.PublicManifestTests) ... ok
+test_rejects_embedded_credentials (test_public_manifest.PublicManifestTests) ... ok
+test_removes_sensitive_query_and_fragment (test_public_manifest.PublicManifestTests) ... ok
+test_actual_rechecks_reproduce_old_numbers_without_promoting_inference (test_revalidation.RevalidationTests) ... ok
+test_all_original_data_and_old_findings_still_match_protected_hashes (test_revalidation.RevalidationTests) ... ok
+test_calendar_gaps_are_missing_not_zero_and_pairing_uses_local_time (test_revalidation.RevalidationTests) ... ok
+test_deliverable_counts_and_hypothesis_status (test_revalidation.RevalidationTests) ... ok
+test_existing_output_directory_is_refused_without_mutation (test_revalidation.RevalidationTests) ... ok
+test_geometry_comparison_preserves_duplicate_multiplicity (test_revalidation.RevalidationTests) ... ok
+test_malformed_annotation_arrays_fail_instead_of_silent_zip_truncation (test_revalidation.RevalidationTests) ... ok
+test_renamed_track_ids_and_empty_tracks_are_not_geometry_errors (test_revalidation.RevalidationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 2.089s
+
+OK

@@ -11,3 +11,5 @@
 # Preserve authoritative input bytes and their published checksums.
 traffic-data-research/input/** -text
 data/** -text
+# Keep alignment whitespace in verbatim generated analytics transcripts.
+traffic-data-research/reports/**/skill_outputs/*.txt whitespace=-blank-at-eol,-blank-at-eof

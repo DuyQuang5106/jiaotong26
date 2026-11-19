@@ -1,0 +1,20 @@
+{
+  "pixels": [
+    1800,
+    1260
+  ],
+  "dpi": [
+    180.00979999999998,
+    180.00979999999998
+  ],
+  "mode": "RGBA",
+  "sha256": "e28f15f3d849c836c4c6ed3482591e03d3e9dd3bac267a025a6f213e1c141fd0",
+  "matplotlib": "3.10.7",
+  "destination": "báo cáo nội bộ; không khẳng định chuẩn tạp chí hoặc chứng nhận accessibility",
+  "alt_vi": "120 ngày có bản ghi trong 294 ngày; một ngày chiếm gần 40% mẫu. 26 chênh lệch ngày rời rạc, nhiều giá trị gần 0 và hai ngày âm mạnh.",
+  "underlying_tables": [
+    "tables/GT07_calendar_coverage.csv",
+    "tables/GT07_recomputed_days.csv"
+  ],
+  "uncertainty": "raw day means; no calibrated confidence intervals shown"
+}

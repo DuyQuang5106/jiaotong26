@@ -3,6 +3,7 @@
 ## Được đưa lên repo
 
 - Code và cấu hình của nghiên cứu, giao thức và bản sao danh mục 22 nguồn do người dùng cung cấp.
+- Ba file người dùng cung cấp trong `data/`: giao thức nghiên cứu, danh mục nguồn và danh mục ý tưởng cuộc thi. Giữ nguyên bytes, không chuẩn hóa newline của đầu vào.
 - Báo cáo tiếng Việt, ma trận vấn đề, hồ sơ nguồn, kết quả kiểm toán và bảng thống kê dẫn xuất phục vụ kết luận.
 - `registry/public_raw_manifest.json`: 134 phản hồi tải trong lần nghiên cứu, giữ URL công khai, UTC, loại nội dung, byte, SHA256, phiên bản/quyền đã biết và vị trí tương đối trong workspace.
 - Bảng tổng hợp GT-07 được tạo từ nguồn có metadata Kaggle ghi CC0; thống kê track GT-09 và dân số lịch sử GT-17 từ bản Zenodo ghi CC-BY-4.0. Trích dẫn và giới hạn nguồn được giữ trong báo cáo/dossier.
@@ -12,6 +13,7 @@
 - Toàn bộ `data/raw/`, `data/interim/`, video, ảnh và các bảng nguồn đầy đủ chưa rõ quyền tái phân phối.
 - `registry/http_events.jsonl` và `registry/raw_manifest.json` nguyên bản: có thể chứa header cookie, session và trạng thái biểu mẫu.
 - Cache kỹ năng, node_modules dạng junction, môi trường Python, danh mục package của máy, preview/inspection tạm.
+- Lượt kiểm tự động sơ bộ `reports/revalidation_2026_11_19/` và thư mục chạy lại độc lập `reports/revalidation_replay*/`; checkpoint hoàn chỉnh `reports/revalidation_2026_11_19_v2/` cùng log đối chiếu được xuất bản.
 
 Các file này không bị xóa. Bản manifest public chỉ chọn trường cần để kiểm toán và bỏ tham số URL có thể chứa thông tin xác thực. Không thay manifest public cho bằng chứng bytes/HTTP đầy đủ đang lưu cục bộ.
 
@@ -20,6 +22,8 @@ Các file này không bị xóa. Bản manifest public chỉ chọn trường c�
 `python src/run_all.py` chạy offline khi workspace đã có raw và log nguyên bản. Bản clone public thiếu các snapshot đó theo chủ ý; muốn chạy lại cần tự thu thập hợp lệ hoặc khôi phục bản sao được phép sử dụng. Không có token trong repo, không bảo đảm URL tương lai còn trả dữ liệu giống ngày nghiên cứu.
 
 Các file input và raw cục bộ được bảo toàn. Bộ 10 kiểm thử và kết quả của lần chạy gốc được giữ để tham chiếu; một số kiểm thử cần raw và không chạy được chỉ từ repo public. Không có kết quả can thiệp ngoài thực địa trong repo.
+
+Phần tổng hợp mới có 10 mẫu hình cuộc thi, 10 phát hiện mô tả và 10 ý tưởng ứng viên có điều kiện. Checkpoint bổ sung ghi rõ hiệu chỉnh GT-07/GT-09, skill/hàm thực sự dùng và 28 kiểm thử đạt trong workspace đủ snapshot. Chạy lại checkpoint độc lập khớp 28 bảng CSV; đây là kiểm tra tính tái lập trong môi trường đã ghi, không chứng minh hiệu quả can thiệp hoặc khả năng thắng giải.
 
 ## Quyền của bên thứ ba
 

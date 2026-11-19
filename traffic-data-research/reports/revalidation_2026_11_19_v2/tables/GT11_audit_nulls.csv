@@ -1,0 +1,6 @@
+﻿column,dtype,null_count,null_pct,warn_threshold,fail_threshold,status
+record_id,int64,0,0.0,5.0,20.0,PASS
+road,object,0,0.0,5.0,20.0,PASS
+chainage,object,0,0.0,5.0,20.0,PASS
+place,object,0,0.0,5.0,20.0,PASS
+note,object,0,0.0,5.0,20.0,PASS

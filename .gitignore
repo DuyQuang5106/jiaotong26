@@ -7,3 +7,7 @@
 __pycache__/
 node_modules/
 .venv*/
+# Independent replay artifacts stay local; the reference checkpoint keeps the verification log.
+traffic-data-research/reports/revalidation_replay*/
+# Preserve the initial automated draft locally; publish the completed v2 checkpoint.
+traffic-data-research/reports/revalidation_2026_11_19/

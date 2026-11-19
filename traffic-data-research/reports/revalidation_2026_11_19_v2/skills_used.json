@@ -1,0 +1,82 @@
+[
+  {
+    "skill": "programmatic-eda",
+    "available": true,
+    "skill_md_sha256": "ec43f35c535577ef327ad722032d7f2722d4e3beed48cb82cd88a60acca60148",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "data-quality-audit",
+    "available": true,
+    "skill_md_sha256": "b8ef6a2ca54588c9eb132b02e9fab1b87077a45f96d5a9c777179d2d47a61818",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "analysis-assumptions-log",
+    "available": true,
+    "skill_md_sha256": "6bfe44e929e654381298dd7ec42e27345238114064f4f67751e033a38ad40e78",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "time-series-analysis",
+    "available": true,
+    "skill_md_sha256": "59146e85e99cd65bbedddc778d82e5668fb6f36e52498d83268ca18dcad06335",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "root-cause-investigation",
+    "available": true,
+    "skill_md_sha256": "138fd4c6db39bfda5956a655e453cee71dd6d13397354cb90a2821f0101824ba",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "analysis-qa-checklist",
+    "available": true,
+    "skill_md_sha256": "7eb35bc75f3dff408a0fae65066d335fc443a3f7078763d7c195522b0bf933ba",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "statistical-analysis",
+    "available": true,
+    "skill_md_sha256": "c5db9b7dd0735ef56354cecc3f23469bdac7395e9416497ed767ce5643a6fdc8",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "scientific-critical-thinking",
+    "available": true,
+    "skill_md_sha256": "cd80217c03ac740b6c835b826f8d98d016b157e8cedd96419c84072b7225fa43",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "experimental-design",
+    "available": true,
+    "skill_md_sha256": "53bb303e2d1f127c0062a505b1b6abebd6e4de12e119953b89bdcc0bd93f1798",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "scientific-visualization",
+    "available": true,
+    "skill_md_sha256": "bddc46cb5e027db1a0ddf7e9674cefe4f54bb259f78e77cf2960fe0368f0e5ae",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "literature-review",
+    "available": true,
+    "skill_md_sha256": "20ce73246d4b60038638b221ab1b6fea43e0eb81dd920dcc3ad4df4a2716730b",
+    "use": "APPLIED_PROCEDURAL_GUIDANCE"
+  },
+  {
+    "skill": "geopandas",
+    "available": true,
+    "skill_md_sha256": "4272589eb03be67a057ad8f31cb58ce5c82f811f0e39821dd04bbf9a8b60b4d0",
+    "use": "READ_NOT_APPLIED",
+    "reason": "no validated spatial join input / no defensible new model; Python libraries not installed in research interpreter"
+  },
+  {
+    "skill": "statsmodels",
+    "available": true,
+    "skill_md_sha256": "fd9390102751eca3fed438ed9901834655df7380aa719ca027ec61dc9d09bcd3",
+    "use": "READ_NOT_APPLIED",
+    "reason": "no validated spatial join input / no defensible new model; Python libraries not installed in research interpreter"
+  }
+]

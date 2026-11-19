@@ -1,0 +1,507 @@
+{
+  "quality": {
+    "GT01": {
+      "grain_key": [
+        "region",
+        "year",
+        "metric"
+      ],
+      "rows": 639,
+      "columns": 4,
+      "required_key_null_cells": 0,
+      "duplicates": {
+        "total_rows": 639,
+        "full_row_duplicates": 0,
+        "full_row_duplicate_pct": 0.0,
+        "full_row_status": "PASS",
+        "key_results": [
+          {
+            "key": "region, year, metric",
+            "key_duplicate_rows": 0,
+            "key_duplicate_pct": 0.0,
+            "duplicate_entities": 0,
+            "status": "PASS"
+          }
+        ]
+      },
+      "note": "Default null/outlier screens are flags; no automatic deletion or imputation."
+    },
+    "GT07": {
+      "grain_key": [
+        "segment_id",
+        "updated_at"
+      ],
+      "rows": 90938,
+      "columns": 4,
+      "required_key_null_cells": 0,
+      "duplicates": {
+        "total_rows": 90938,
+        "full_row_duplicates": 0,
+        "full_row_duplicate_pct": 0.0,
+        "full_row_status": "PASS",
+        "key_results": [
+          {
+            "key": "segment_id, updated_at",
+            "key_duplicate_rows": 0,
+            "key_duplicate_pct": 0.0,
+            "duplicate_entities": 0,
+            "status": "PASS"
+          }
+        ]
+      },
+      "note": "Default null/outlier screens are flags; no automatic deletion or imputation."
+    },
+    "GT10": {
+      "grain_key": [
+        "record_id"
+      ],
+      "rows": 107,
+      "columns": 9,
+      "required_key_null_cells": 0,
+      "duplicates": {
+        "total_rows": 107,
+        "full_row_duplicates": 0,
+        "full_row_duplicate_pct": 0.0,
+        "full_row_status": "PASS",
+        "key_results": [
+          {
+            "key": "record_id",
+            "key_duplicate_rows": 0,
+            "key_duplicate_pct": 0.0,
+            "duplicate_entities": 0,
+            "status": "PASS"
+          }
+        ]
+      },
+      "note": "Default null/outlier screens are flags; no automatic deletion or imputation."
+    },
+    "GT11": {
+      "grain_key": [
+        "record_id"
+      ],
+      "rows": 58,
+      "columns": 5,
+      "required_key_null_cells": 0,
+      "duplicates": {
+        "total_rows": 58,
+        "full_row_duplicates": 0,
+        "full_row_duplicate_pct": 0.0,
+        "full_row_status": "PASS",
+        "key_results": [
+          {
+            "key": "record_id",
+            "key_duplicate_rows": 0,
+            "key_duplicate_pct": 0.0,
+            "duplicate_entities": 0,
+            "status": "PASS"
+          }
+        ]
+      },
+      "note": "Default null/outlier screens are flags; no automatic deletion or imputation."
+    },
+    "ideas": {
+      "grain_key": [
+        "idea_id"
+      ],
+      "rows": 73,
+      "columns": 22,
+      "required_key_null_cells": 0,
+      "duplicates": {
+        "total_rows": 73,
+        "full_row_duplicates": 0,
+        "full_row_duplicate_pct": 0.0,
+        "full_row_status": "PASS",
+        "key_results": [
+          {
+            "key": "idea_id",
+            "key_duplicate_rows": 0,
+            "key_duplicate_pct": 0.0,
+            "duplicate_entities": 0,
+            "status": "PASS"
+          }
+        ]
+      },
+      "note": "Default null/outlier screens are flags; no automatic deletion or imputation."
+    },
+    "GT07_segment_fk": {
+      "child_key": "segment_id",
+      "parent_key": "_id",
+      "total_child_rows": 90938,
+      "orphan_count": 0,
+      "orphan_pct": 0.0,
+      "orphan_values_sample": [],
+      "status": "PASS"
+    },
+    "idea_source_fk": {
+      "child_key": "source_id",
+      "parent_key": "source_id",
+      "total_child_rows": 115,
+      "orphan_count": 0,
+      "orphan_pct": 0.0,
+      "orphan_values_sample": [],
+      "status": "PASS"
+    },
+    "idea_proposed_gt_fk": {
+      "child_key": "source_id",
+      "parent_key": "source_id",
+      "total_child_rows": 229,
+      "orphan_count": 0,
+      "orphan_pct": 0.0,
+      "orphan_values_sample": [],
+      "status": "PASS",
+      "interpretation": "valid inventory IDs only; not evidence that projects actually used those datasets"
+    },
+    "GT07_freshness_screen": {
+      "timestamp_col": "updated_at",
+      "latest_record": "2021-04-22T06:53:27.300000+00:00",
+      "current_time_utc": "2026-11-19T08:19:29.904675+00:00",
+      "lag_hours": 48889.43,
+      "max_lag_hours": 8760,
+      "status": "FAIL",
+      "message": "Data is STALE — lag 48889.4h > 8760h limit",
+      "threshold_basis": "analyst sensitivity: within 365 days for a proposed current baseline; NOT publisher SLA",
+      "historical_use": "valid as historical artifact; not rejected for being historical"
+    },
+    "GT10_treatment_overlap": [
+      79
+    ],
+    "GT10_treatment_nonempty": 19,
+    "GT10_untreated_nonempty": 89,
+    "GT10_treatment_meaning": "free text, overlapping fields; not a binary completed/incomplete label"
+  },
+  "GT07": {
+    "n_status_rows": 90938,
+    "matched_segment_days": 404,
+    "unique_paired_segments": 302,
+    "matched_days": 26,
+    "calendar_days": 294,
+    "observed_days": 120,
+    "unobserved_days_not_zero": 174,
+    "top_day_fraction": 0.3969297763311267,
+    "days_with_one_pair": 8,
+    "equal_day_mean": -3.4591563737366524,
+    "equal_segment_day_mean": -0.019801980198019802,
+    "day_sd": 15.79627510334579,
+    "standardized_day_mean_over_sd": -0.2189855742005894,
+    "shapiro_W": 0.6287342423107983,
+    "shapiro_p": 6.451162394622298e-07,
+    "old_t": -1.1166117160441258,
+    "old_df": 25,
+    "old_p": 0.27477773446616965,
+    "old_iid_bootstrap_interval": [
+      -10.071728507862613,
+      1.791428098453245
+    ],
+    "leave_one_day_out_estimate_range": [
+      -4.110855962019452,
+      -1.197522628686118
+    ],
+    "reproduction": {
+      "estimate_matches_old": true,
+      "t_matches_old": true,
+      "p_matches_old": true,
+      "iid_bootstrap_matches_old": true
+    },
+    "sensitivity": [
+      {
+        "estimator": "equal_day_mean",
+        "estimate": -3.4591563737366524,
+        "unit_count": 26
+      },
+      {
+        "estimator": "equal_segment_day_mean",
+        "estimate": -0.019801980198019802,
+        "unit_count": 404
+      },
+      {
+        "estimator": "median_day_mean",
+        "estimate": 0.0,
+        "unit_count": 26
+      },
+      {
+        "estimator": "mean_days_with_at_least_2_pairs",
+        "estimate": 1.447885237935947,
+        "unit_count": 18
+      },
+      {
+        "estimator": "mean_days_with_at_least_5_pairs",
+        "estimate": 0.5752769961164392,
+        "unit_count": 13
+      }
+    ],
+    "updated_inference_status": "DESCRIPTIVE_CONTRAST_ONLY; iid p/CI reproduced for audit, not calibrated population inference",
+    "why": "unknown sampling/velocity units, changing road mix, sparse irregular days, repeated roads, day independence not established",
+    "sensitivity_status": "post-hoc estimator comparison; estimands differ; no significance search; no new p-values",
+    "time_series_gate": "no ADF, decomposition, ARIMA, gap filling or forecast; sampling mechanism and regular comparable series unavailable"
+  },
+  "GT09": {
+    "VNTraffic": {
+      "txt_rows": 16036,
+      "json_rows": 16036,
+      "shared_box_instances": 16036,
+      "txt_only_box_instances": 0,
+      "json_only_box_instances": 0,
+      "identical_geometry_multisets": true,
+      "txt_duplicate_geometry_instances": 0,
+      "json_duplicate_geometry_instances": 0,
+      "txt_track_ids": 85,
+      "json_track_ids": 85,
+      "json_track_objects_including_empty": 205,
+      "json_empty_track_objects": 120,
+      "matched_geometry_track_mapping_one_to_one": true,
+      "matched_json_track_ids_with_different_txt_id": 49,
+      "txt_duplicate_frame_track_extra_rows": 2,
+      "comparison_key": "frame,x,y,width,height; exact numeric equality; multiplicity retained; track ID ignored",
+      "scope": "representation audit, not validation against video or independently annotated truth"
+    },
+    "AICC22-Custom": {
+      "txt_rows": 1185,
+      "json_rows": 2439,
+      "shared_box_instances": 1185,
+      "txt_only_box_instances": 0,
+      "json_only_box_instances": 1254,
+      "identical_geometry_multisets": false,
+      "txt_duplicate_geometry_instances": 0,
+      "json_duplicate_geometry_instances": 0,
+      "txt_track_ids": 21,
+      "json_track_ids": 25,
+      "json_track_objects_including_empty": 25,
+      "json_empty_track_objects": 0,
+      "matched_geometry_track_mapping_one_to_one": true,
+      "matched_json_track_ids_with_different_txt_id": 20,
+      "txt_duplicate_frame_track_extra_rows": 0,
+      "comparison_key": "frame,x,y,width,height; exact numeric equality; multiplicity retained; track ID ignored",
+      "scope": "representation audit, not validation against video or independently annotated truth"
+    }
+  },
+  "GT12": {
+    "am": {
+      "times_to_trips": {
+        "child_key": "trip_id",
+        "parent_key": "trip_id",
+        "total_child_rows": 100117,
+        "orphan_count": 0,
+        "orphan_pct": 0.0,
+        "orphan_values_sample": [],
+        "status": "PASS"
+      },
+      "times_to_stops": {
+        "child_key": "stop_id",
+        "parent_key": "stop_id",
+        "total_child_rows": 100117,
+        "orphan_count": 0,
+        "orphan_pct": 0.0,
+        "orphan_values_sample": [],
+        "status": "PASS"
+      },
+      "calendar_start": 20180101,
+      "calendar_end": 20181231,
+      "duplicate_trip_sequence_extra_rows": 0,
+      "trip_ids": 3024,
+      "stop_ids": 7670,
+      "headway_status": "route-level historical schedule summary only; no direction/service-day comparability audit; not a current bus wait estimate"
+    },
+    "md": {
+      "times_to_trips": {
+        "child_key": "trip_id",
+        "parent_key": "trip_id",
+        "total_child_rows": 224166,
+        "orphan_count": 0,
+        "orphan_pct": 0.0,
+        "orphan_values_sample": [],
+        "status": "PASS"
+      },
+      "times_to_stops": {
+        "child_key": "stop_id",
+        "parent_key": "stop_id",
+        "total_child_rows": 224166,
+        "orphan_count": 0,
+        "orphan_pct": 0.0,
+        "orphan_values_sample": [],
+        "status": "PASS"
+      },
+      "calendar_start": 20180101,
+      "calendar_end": 20181231,
+      "duplicate_trip_sequence_extra_rows": 0,
+      "trip_ids": 6713,
+      "stop_ids": 7670,
+      "headway_status": "route-level historical schedule summary only; no direction/service-day comparability audit; not a current bus wait estimate"
+    },
+    "pm": {
+      "times_to_trips": {
+        "child_key": "trip_id",
+        "parent_key": "trip_id",
+        "total_child_rows": 110323,
+        "orphan_count": 0,
+        "orphan_pct": 0.0,
+        "orphan_values_sample": [],
+        "status": "PASS"
+      },
+      "times_to_stops": {
+        "child_key": "stop_id",
+        "parent_key": "stop_id",
+        "total_child_rows": 110323,
+        "orphan_count": 0,
+        "orphan_pct": 0.0,
+        "orphan_values_sample": [],
+        "status": "PASS"
+      },
+      "calendar_start": 20180101,
+      "calendar_end": 20181231,
+      "duplicate_trip_sequence_extra_rows": 0,
+      "trip_ids": 3301,
+      "stop_ids": 7670,
+      "headway_status": "route-level historical schedule summary only; no direction/service-day comparability audit; not a current bus wait estimate"
+    }
+  },
+  "GT08": {
+    "files": 50,
+    "frames": 144847,
+    "abnormal_frames": 62130,
+    "pooled_fraction": 0.428935359379207,
+    "equal_file_mean_fraction": 0.43950902364729155,
+    "claim_gate": "curated binary annotation proportions only; not population prevalence or cargo-specific counts"
+  },
+  "GT04": {
+    "objects": 1125,
+    "by_type": {
+      "node": 1026,
+      "way": 88,
+      "relation": 11
+    },
+    "duplicate_type_id_extra_rows": 0,
+    "nodes_with_missing_coordinates": 0,
+    "claim_gate": "convenience bbox only; no spatial join, distance measurement, tag-absence inference or provincial extrapolation"
+  },
+  "GT20": {
+    "classes": 82,
+    "reported_count_sum": 19748,
+    "duplicate_ids": 0,
+    "id31_labels": [
+      {
+        "ID": 31,
+        "classes-en": "No Moto Turn Left",
+        "classes-vn": "Cấm xe máy rẻ phải",
+        "Count": 46
+      }
+    ],
+    "claim_gate": "publisher counts and bilingual label direction conflict; no image/annotation verification; no legal interpretation"
+  },
+  "GT02": {
+    "monthly_rows": 3,
+    "months_as_extracted": [
+      8,
+      9,
+      10
+    ],
+    "time_series_gate": "three preliminary monthly values; no seasonal adjustment/forecast; source revision unresolved",
+    "lineage_gate": "use source h1/content period, not URL slug; first stored row has differing URL month text"
+  },
+  "GT01": {
+    "province_count": 63,
+    "reconciliation": [
+      {
+        "year": 2022,
+        "metric": "crashes",
+        "national": 11457.0,
+        "province_sum": 11450.0,
+        "other": 7.0,
+        "residual": 0.0,
+        "status": "RECONCILED"
+      },
+      {
+        "year": 2023,
+        "metric": "crashes",
+        "national": 22067.0,
+        "province_sum": 22061.0,
+        "other": 6.0,
+        "residual": 0.0,
+        "status": "RECONCILED"
+      },
+      {
+        "year": 2024,
+        "metric": "crashes",
+        "national": 23667.0,
+        "province_sum": 23663.0,
+        "other": 4.0,
+        "residual": 0.0,
+        "status": "RECONCILED"
+      },
+      {
+        "year": 2022,
+        "metric": "deaths",
+        "national": 6397.0,
+        "province_sum": 6384.0,
+        "other": 13.0,
+        "residual": 0.0,
+        "status": "RECONCILED"
+      },
+      {
+        "year": 2023,
+        "metric": "deaths",
+        "national": 11628.0,
+        "province_sum": 11626.0,
+        "other": 2.0,
+        "residual": 0.0,
+        "status": "RECONCILED"
+      },
+      {
+        "year": 2024,
+        "metric": "deaths",
+        "national": 11101.0,
+        "province_sum": 11098.0,
+        "other": 3.0,
+        "residual": 0.0,
+        "status": "RECONCILED"
+      },
+      {
+        "year": 2022,
+        "metric": "injuries",
+        "national": 7804.0,
+        "province_sum": 7804.0,
+        "other": null,
+        "residual": null,
+        "status": "OTHER_MISSING_NOT_TESTABLE"
+      },
+      {
+        "year": 2023,
+        "metric": "injuries",
+        "national": 15292.0,
+        "province_sum": 15292.0,
+        "other": null,
+        "residual": null,
+        "status": "OTHER_MISSING_NOT_TESTABLE"
+      },
+      {
+        "year": 2024,
+        "metric": "injuries",
+        "national": 17424.0,
+        "province_sum": 17423.0,
+        "other": 1.0,
+        "residual": 0.0,
+        "status": "RECONCILED"
+      }
+    ],
+    "root_cause_gate": "arithmetic decomposition only; no 30-day pre-change baseline/event log; no causal attribution",
+    "contribution_denominator": "net change in SUM OF 63 PROVINCES, excluding Other; signed, can exceed 100%; not risk share",
+    "time_series_gate": "3 annual points; no seasonal model, forecast or intervention time series",
+    "selection": "T01-T06 remain purposeful historical examples, not highest-risk provinces"
+  },
+  "literature": {
+    "api_rows_logged": 50,
+    "api_records_table": 50,
+    "all_searches_complete": false,
+    "scope": "existing bounded narrative review rechecked; no new exhaustive search or full-text eligibility process claimed",
+    "prior_art": "IDEA-032 is close to curve warning; IDEA-042/035/025 close to educational app; no novelty established"
+  },
+  "ideas": {
+    "records": 73,
+    "unique_ids": 73,
+    "title_only_mechanisms": 70,
+    "recorded_awarded": 55,
+    "education_editorial_count": 10,
+    "education_title_screen_count": 8,
+    "claim_gate": "no winner prediction, significance tests or award causal inference; inferred clusters are editorial labels",
+    "missing_awards": "not recorded is not demonstrated loss; unknown award rank stays unknown"
+  }
+}

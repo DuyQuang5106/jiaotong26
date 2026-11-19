@@ -1,0 +1,9 @@
+{
+  "sha256_at_delivery": {
+    "traffic-data-research/src/revalidate_research.py": "31eb63486d7022e843207bd6bdcd76f68c8d3f500ba2bc72d06565d4440caee3",
+    "traffic-data-research/src/research_checkpoint_reports.py": "f3dc77477cea219dee6a39a7cdfc0f455f675b50d77f86088aef473439d96250",
+    "traffic-data-research/src/discover_opportunities.py": "30969904afe93a8304a4b0963724834aee2d666f1c519d4c594f60bc2d30d76c",
+    "traffic-data-research/tests/test_revalidation.py": "1e2ee8675d39e011933672c75cddee49912f5cb6ef5cb0f42ea36698f6c33f8f"
+  },
+  "note": "Following independent replay, report-only wording was expanded to retain the prior GT-01 metadata warning. Computation code/metrics unchanged."
+}

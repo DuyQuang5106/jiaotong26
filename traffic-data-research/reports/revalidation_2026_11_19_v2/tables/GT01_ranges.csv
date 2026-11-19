@@ -1,0 +1,3 @@
+﻿column,rule,status,issues
+value,"{""min"": 0}",PASS,None
+year,"{""allowed"": [2022, 2023, 2024]}",PASS,None

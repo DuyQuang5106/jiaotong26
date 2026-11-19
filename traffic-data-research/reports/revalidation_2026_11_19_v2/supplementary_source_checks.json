@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://arxiv.org/abs/2609.00065",
+    "checked_date": "2026-11-19",
+    "read_scope": "landing record, author list, submission/version history",
+    "result": "v2, revised 2026-09-02; Kassis, Agarwal, He, Patel, Brueckner",
+    "use": "procedural/software citation only"
+  },
+  {
+    "url": "https://highways.dot.gov/safety/proven-safety-countermeasures/enhanced-delineation-horizontal-curves",
+    "checked_date": "2026-11-19",
+    "read_scope": "official FHWA page, strategies table and implementation guidance",
+    "result": "curve delineation and dynamic warnings are prior art",
+    "use": "existing strategy identification; no effect size transferred to Son La"
+  }
+]

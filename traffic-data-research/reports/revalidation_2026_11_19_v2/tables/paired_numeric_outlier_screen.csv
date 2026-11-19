@@ -1,0 +1,4 @@
+﻿column,outlier_count,outlier_pct,min,max,mean,iqr_outliers,zscore_outliers
+difference,92,22.77,-104.5,77.0,-0.0198,92,7
+midday,1,0.25,1.0,105.5,31.1634,1,1
+peak,0,0.0,1.0,84.0,31.1436,0,0

@@ -1,0 +1,10 @@
+﻿column,dtype,null_count,null_pct,warn_threshold,fail_threshold,status
+treated,object,88,82.24,5.0,20.0,FAIL
+note,object,87,81.31,5.0,20.0,FAIL
+untreated,object,18,16.82,5.0,20.0,WARN
+record_id,int64,0,0.0,5.0,20.0,PASS
+road,object,0,0.0,5.0,20.0,PASS
+commune,object,0,0.0,5.0,20.0,PASS
+end_chainage,object,0,0.0,5.0,20.0,PASS
+start_chainage,object,0,0.0,5.0,20.0,PASS
+condition,object,0,0.0,5.0,20.0,PASS

@@ -1,0 +1,2 @@
+﻿column,outlier_count,outlier_pct,min,max,mean,iqr_outliers,zscore_outliers
+value,76,11.93,1.0,23667.0,607.8666,76,10

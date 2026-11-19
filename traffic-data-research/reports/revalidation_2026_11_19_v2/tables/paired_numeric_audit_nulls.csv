@@ -1,0 +1,4 @@
+﻿column,dtype,null_count,null_pct,warn_threshold,fail_threshold,status
+peak,float64,0,0.0,5.0,20.0,PASS
+midday,float64,0,0.0,5.0,20.0,PASS
+difference,float64,0,0.0,5.0,20.0,PASS

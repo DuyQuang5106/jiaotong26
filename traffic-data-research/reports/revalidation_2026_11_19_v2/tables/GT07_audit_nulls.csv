@@ -1,0 +1,5 @@
+﻿column,dtype,null_count,null_pct,warn_threshold,fail_threshold,status
+_id,int64,0,0.0,5.0,20.0,PASS
+updated_at,object,0,0.0,5.0,20.0,PASS
+segment_id,int64,0,0.0,5.0,20.0,PASS
+velocity,int64,0,0.0,5.0,20.0,PASS
