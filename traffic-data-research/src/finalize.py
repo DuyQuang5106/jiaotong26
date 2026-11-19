@@ -1,5 +1,5 @@
 """Verify artifact contract and write an execution epilogue, without network."""
-import hashlib,json
+import hashlib,json,re
 from pathlib import Path
 from parse_inventory import ROOT
 def main():
@@ -11,6 +11,7 @@ def main():
     assert all((ROOT/p).is_file() and (ROOT/p).stat().st_size for p in required)
     audit=pd.read_csv(ROOT/'registry/source_audit.csv'); assert len(audit)==22 and audit.source_id.nunique()==22
     tests=(ROOT/'tests/test_results.txt').read_text(encoding='utf-8'); assert '\nOK\n' in tests
+    test_count=int(re.search(r'Ran (\d+) tests?',tests).group(1))
     with zipfile.ZipFile(ROOT/'reports/03_problem_evidence_matrix.xlsx') as z:
         ns={'m':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
         errors=[]
@@ -26,7 +27,7 @@ def main():
     original_dir=Path('C:/Users/LENOVO/Downloads')
     for name in ['TRAFFIC_DATA_RESEARCH_AGENT_PROMPT.md','danh_muc_du_lieu_giao_thong_viet_nam_2026.xlsx']:
         if (original_dir/name).exists(): assert hashlib.sha256((original_dir/name).read_bytes()).digest()==hashlib.sha256((ROOT/'input'/name).read_bytes()).digest()
-    stats={'required_artifacts_checked':len(required),'source_dossiers':22,'source_audit_rows':len(audit),'http_events':len(es),'raw_files':len(manifest),'raw_bytes':sum(x['byte_size'] for x in manifest),'tests_passed':10,'analyzed_sources':['GT-01','GT-02','GT-04','GT-06','GT-07','GT-08','GT-09','GT-10','GT-11','GT-12','GT-17','GT-20'],'first_http_utc':min(e['download_utc'] for e in es),'last_http_utc':max(e['download_utc'] for e in es),'limitations':'no field work/intervention, no established novelty, bounded literature review; source-specific backlog preserved'}
+    stats={'required_artifacts_checked':len(required),'source_dossiers':22,'source_audit_rows':len(audit),'http_events':len(es),'raw_files':len(manifest),'raw_bytes':sum(x['byte_size'] for x in manifest),'tests_passed':test_count,'analyzed_sources':['GT-01','GT-02','GT-04','GT-06','GT-07','GT-08','GT-09','GT-10','GT-11','GT-12','GT-17','GT-20'],'first_http_utc':min(e['download_utc'] for e in es),'last_http_utc':max(e['download_utc'] for e in es),'limitations':'no field work/intervention, no established novelty, bounded literature review; source-specific backlog preserved'}
     (ROOT/'quality/deliverable_validation.json').write_text(json.dumps(stats,indent=2),encoding='utf-8')
     log=f'''# Nhật ký thực thi và quyết định
 
@@ -43,7 +44,7 @@ Ngày nghiên cứu 19/11/2026 UTC+7. HTTP đầu: {stats['first_http_utc']}; HT
 9. Tra Crossref và Europe PMC có lưu raw/query/count; đọc nguồn mục tiêu, phân biệt abstract/fulltext/projected scenario. Novelty và prior-art search còn giới hạn. Trích dẫn Scientific Agent Skills sau kiểm tra arXiv v2, không dùng làm bằng chứng giao thông.
 10. Chấm bốn vấn đề mô tả E1/E2 và một nhánh E0 tách riêng. Điểm là judgment theo trọng số giao thức. Thiếu quyền/baseline/outcome hiện tại vẫn chặn triển khai dù điểm cao; không ép đủ top 10. Ba hướng can thiệp có H0/H1, baseline, pilot assumptions và kill criteria.
 11. Xuất CSV/XLSX ma trận bằng artifact-tool 2.8.148, 2 sheet, 5 record/37 field; render và xem cả hai sheet, điều chỉnh khoảng trắng và độ cao. Không có formula tính mô hình trong workbook; điểm static đối chiếu code Python. Không kiểm trong Excel desktop.
-12. Chạy lại toàn pipeline offline từ raw. **10/10 unit tests đạt**, log `tests/test_results.txt`; kiểm checksum toàn raw, đối chiếu MD5 Zenodo, danh mục, ngày/múi giờ, rate, vùng, lý trình, CRS và scoring. Kiểm thử code đạt không làm biến mất cờ chất lượng dữ liệu. Không có test thất bại chưa xử lý. Không có thực nghiệm ngoài hiện trường hoặc causal effect mới.
+12. Chạy lại toàn pipeline offline từ raw. **{test_count}/{test_count} unit tests đạt**, log `tests/test_results.txt`; kiểm checksum toàn raw, đối chiếu MD5 Zenodo, danh mục, ngày/múi giờ, rate, vùng, lý trình, CRS và scoring. Kiểm thử code đạt không làm biến mất cờ chất lượng dữ liệu. Không có test thất bại chưa xử lý. Không có thực nghiệm ngoài hiện trường hoặc causal effect mới.
 
 ## Tổng kiểm
 

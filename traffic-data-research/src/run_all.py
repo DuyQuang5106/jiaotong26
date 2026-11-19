@@ -4,6 +4,8 @@ from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 for name in ['ingest','eda','extended_analysis','supplemental_analysis','triangulation','quality','build_registry','build_evidence_matrix','write_reports','literature_report']:
     subprocess.run([sys.executable,str(root/'src'/(name+'.py'))],check=True,cwd=root)
+if (root.parent/'data/traffic_contest_ideas_2022_2025.xlsx').exists():
+    subprocess.run([sys.executable,str(root/'src/discover_opportunities.py')],check=True,cwd=root)
 with (root/'tests/test_results.txt').open('w',encoding='utf-8') as f:
     result=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],cwd=root,stdout=f,stderr=subprocess.STDOUT)
 print('Tests exit:',result.returncode)

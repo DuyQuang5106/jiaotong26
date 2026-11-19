@@ -1,0 +1,20 @@
+{
+  "access_date_local": "2026-11-19",
+  "method": "web tool open; selected primary publication pages and canonical source pages; not exhaustive verification of workbook",
+  "successful": [
+    {"url":"https://sangkienatgt.dantri.com.vn/19-tac-pham-duoc-vinh-danh-tai-sang-kien-an-toan-giao-thong-2025","supports":"19 published names and judging criteria; not individual award ranks"},
+    {"url":"https://nhandan.vn/tam-tac-pham-xuat-sac-doat-giai-cuoc-thi-sang-kien-an-toan-giao-thong-post847717.html","supports":"published 2024 award list including curve-warning/eTraffic/library; aggregate count inconsistency retained"},
+    {"url":"https://bnews.vn/trao-giai-thuong-sang-kien-an-toan-giao-thong-viet-nam-2023/311608.html","supports":"2023 published awards including E-learning and local school-gate intervention"},
+    {"url":"https://dantri.com.vn/thoi-su/cac-tac-pham-dat-giai-cao-nhat-cuoc-thi-sang-kien-an-toan-giao-thong-2022-20221227192604875.htm","supports":"2022 categories and Dak Nong road intervention award"},
+    {"url":"https://sangkienatgt.dantri.com.vn/the-le","supports":"2026 theme scope and required dossier; no internal spreadsheet weight interpreted as official"},
+    {"url":"https://data.soxaydung.sonla.gov.vn/detail_data/du-lieu-cac-diem-tiem-an-tai-nan-giao-thong-tren-cac-tuyen-quoc-lo-duong-tinh","supports":"first page and 2025-12-02 metadata, including record 9; not a new field validation"},
+    {"url":"https://data.soxaydung.sonla.gov.vn/detail_data/du-lieu-cac-diem-co-nguy-co-sat-lo-cao-tren-cac-tuyen-quoc-lo-duong-tinh","supports":"first page of landslide-hazard inventory and metadata; not observed events"},
+    {"url":"https://arxiv.org/abs/2609.00065","supports":"Scientific Agent Skills citation identity; latest displayed v2, 2026-09-02; process reference only"}
+  ],
+  "failed": [
+    {"source_id":"GT-01","attempt":"canonical V14.88.px through web tool","error":"not accessible via this tool","fallback":"preserved selected_table HTML snapshot and derived CSV from original research run"},
+    {"source_id":"GT-10","attempt":"canonical dataset URL ?page=2 through web tool","error":"cache miss","fallback":"preserved full pagination snapshots and derived table from original run"},
+    {"source_id":"GT-10","attempt":"canonical dataset URL ?page=4 through web tool","error":"cache miss","fallback":"preserved full pagination snapshots and derived table from original run"}
+  ],
+  "limitations": "No updated traffic counts acquired. Rows outside first public page rely on preserved snapshots whose UTC/SHA256 are linked in traffic_findings.json. No assumption of unchanged 2026 site conditions."
+}

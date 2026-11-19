@@ -1,0 +1,30 @@
+{
+  "generated_utc": "2026-11-19T07:57:07.779274+00:00",
+  "input_sha256": {
+    "data\\traffic_contest_ideas_2022_2025.xlsx": "ff63d3e8254dc2993a39b180c7e9f42e39fb6e734173f07e61ebbfd6e654376d",
+    "data\\danh_muc_du_lieu_giao_thong_viet_nam_2026.xlsx": "979b28045b2936c1619387a44ba7a06e6ce1157c906c386be125dc400722bb87",
+    "data\\TRAFFIC_DATA_RESEARCH_AGENT_PROMPT.md": "a3eaeb900469e877a1c075142f4ee0aa2266ec9a64b61159fddaa95ebcf7ae50"
+  },
+  "derived_input_sha256": {
+    "traffic-data-research\\data\\processed\\GT-01_aggregates.csv": "4adcf3810a18cfcf1abfdde910d87098bae2f2722cacc7b67ff38319d59c9af2",
+    "traffic-data-research\\data\\processed\\GT-10_hazards.csv": "9a1c03c73fb02bf5ee4d586f0ebb8baf6ad267751c8482509aee6f039110fc85",
+    "traffic-data-research\\data\\processed\\GT-11_hazards.csv": "14bd7780e4fbbd7e15a753cf05ff887a5e8684dfe3a805349422b01433e1821b"
+  },
+  "ideas": 73,
+  "same_contest_ideas": 67,
+  "traffic_inventory_sources": 22,
+  "historic_provinces_scanned": 63,
+  "patterns": 10,
+  "traffic_findings": 10,
+  "selection_method": "Purposeful six province examples after full descriptive scan; four Son La corridor leads by mechanism specificity. No risk ranking or causal interpretation.",
+  "boundaries": "2023-2024 as recorded; no relabeling to 2026 boundaries; Son La places from 2025 snapshot.",
+  "new_inferential_tests": "none; post-hoc descriptive synthesis only",
+  "idea_label_provenance": "Workbook claims unless a particular official article is separately checked; title clusters are editorial.",
+  "limitations": [
+    "no current site validation",
+    "no travel exposure denominator",
+    "no customer demand or willingness-to-pay evidence",
+    "no winner prediction",
+    "novelty not established"
+  ]
+}

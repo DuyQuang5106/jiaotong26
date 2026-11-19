@@ -1,0 +1,9 @@
+﻿record_id,road,start_chainage,end_chainage,commune,analyst_paraphrase,visibility_mentioned,signage_incomplete_reported,original_local_table,snapshot,source_id
+9,QL.6B,Km25+00,Km25+210,Quỳnh Nhai,"Nguồn mô tả xe dài mở lái sang làn đối diện trên mặt đường 5,50 m.",True,False,data/processed/GT-10_hazards.csv,2025-12-02,GT-10
+12,QL.279D,Km80+200,Km80+400,Mường La,Nguồn nêu đường cong R<=15 m và xe lớn mở lái sang phần đường đối diện.,True,False,data/processed/GT-10_hazards.csv,2025-12-02,GT-10
+13,QL.279D,Km87+200,Km87+400,Mường La,Nguồn nêu báo hiệu chưa hoàn chỉnh cùng với hạn chế tầm nhìn.,True,True,data/processed/GT-10_hazards.csv,2025-12-02,GT-10
+14,QL.279D,Km87+900,Km88+300,Mường La,Nguồn nêu báo hiệu chưa hoàn chỉnh cùng với hạn chế tầm nhìn.,True,True,data/processed/GT-10_hazards.csv,2025-12-02,GT-10
+28,QL.43,Km35+900,Km36+200,Mộc Châu,Nguồn liệt kê một đoạn cong/dốc và tầm nhìn hạn chế.,True,False,data/processed/GT-10_hazards.csv,2025-12-02,GT-10
+29,QL.43,Km46+250,Km46+450,Mộc Châu,Nguồn liệt kê một đoạn cong/dốc và tầm nhìn hạn chế.,True,False,data/processed/GT-10_hazards.csv,2025-12-02,GT-10
+30,QL.43,Km46+700,Km46+780,Mộc Châu,Nguồn liệt kê đường cong bán kính nhỏ.,False,False,data/processed/GT-10_hazards.csv,2025-12-02,GT-10
+31,QL.43,Km46+810,Km46+980,Mộc Châu,Nguồn liệt kê đường cong bán kính nhỏ.,False,False,data/processed/GT-10_hazards.csv,2025-12-02,GT-10
