@@ -1,0 +1,42 @@
+[
+  {
+    "name": "AICC22-Custom/",
+    "bytes": 0
+  },
+  {
+    "name": "AICC22-Custom/AICC22-Custom_GroundTruth-video.mp4",
+    "bytes": 14904003
+  },
+  {
+    "name": "AICC22-Custom/AICC22-Custom_GroundTruth.json",
+    "bytes": 163956
+  },
+  {
+    "name": "AICC22-Custom/AICC22-Custom_GroundTruth.txt",
+    "bytes": 39845
+  },
+  {
+    "name": "AICC22-Custom/AICC22-Custom_Original-video.mp4",
+    "bytes": 6005831
+  },
+  {
+    "name": "VNTraffic/",
+    "bytes": 0
+  },
+  {
+    "name": "VNTraffic/VNTraffic_GroundTruth-video.mp4",
+    "bytes": 11312250
+  },
+  {
+    "name": "VNTraffic/VNTraffic_GroundTruth.json",
+    "bytes": 1102486
+  },
+  {
+    "name": "VNTraffic/VNTraffic_GroundTruth.txt",
+    "bytes": 570665
+  },
+  {
+    "name": "VNTraffic/VNTraffic_Original-video.mp4",
+    "bytes": 7143421
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "path": "input\\danh_muc_du_lieu_giao_thong_viet_nam_2026.xlsx",
+    "byte_size": 15456,
+    "sha256": "979b28045b2936c1619387a44ba7a06e6ce1157c906c386be125dc400722bb87"
+  },
+  {
+    "path": "input\\TRAFFIC_DATA_RESEARCH_AGENT_PROMPT.md",
+    "byte_size": 20799,
+    "sha256": "a3eaeb900469e877a1c075142f4ee0aa2266ec9a64b61159fddaa95ebcf7ae50"
+  }
+]

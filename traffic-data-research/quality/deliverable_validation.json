@@ -1,0 +1,26 @@
+{
+  "required_artifacts_checked": 40,
+  "source_dossiers": 22,
+  "source_audit_rows": 22,
+  "http_events": 136,
+  "raw_files": 134,
+  "raw_bytes": 65528358,
+  "tests_passed": 10,
+  "analyzed_sources": [
+    "GT-01",
+    "GT-02",
+    "GT-04",
+    "GT-06",
+    "GT-07",
+    "GT-08",
+    "GT-09",
+    "GT-10",
+    "GT-11",
+    "GT-12",
+    "GT-17",
+    "GT-20"
+  ],
+  "first_http_utc": "2026-11-19T03:59:18.787231+00:00",
+  "last_http_utc": "2026-11-19T04:10:53.415122+00:00",
+  "limitations": "no field work/intervention, no established novelty, bounded literature review; source-specific backlog preserved"
+}
