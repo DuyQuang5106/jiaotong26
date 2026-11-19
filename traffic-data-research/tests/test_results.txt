@@ -1,0 +1,15 @@
+test_chainage (test_pipeline.ProtocolTests) ... ok
+test_crs (test_pipeline.ProtocolTests) ... ok
+test_date_timezone (test_pipeline.ProtocolTests) ... ok
+test_historical_rates_only (test_pipeline.ProtocolTests) ... ok
+test_inventory (test_pipeline.ProtocolTests) ... ok
+test_provider_archive_checksums (test_pipeline.ProtocolTests) ... ok
+test_rate (test_pipeline.ProtocolTests) ... ok
+test_raw_integrity (test_pipeline.ProtocolTests) ... ok
+test_region_normalization (test_pipeline.ProtocolTests) ... ok
+test_scores (test_pipeline.ProtocolTests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.306s
+
+OK

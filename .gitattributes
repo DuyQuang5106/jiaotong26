@@ -8,3 +8,5 @@
 *.csv text eol=lf
 *.xlsx binary
 *.png binary
+# Preserve authoritative input bytes and their published checksums.
+traffic-data-research/input/** -text

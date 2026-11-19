@@ -1,0 +1,179 @@
+{
+  "GT-07": {
+    "rows": 90938,
+    "segments": 10027,
+    "start_utc": "2020-07-03T14:55:31.869Z",
+    "end_utc": "2021-04-22T06:53:27.300Z",
+    "days_observed": 120,
+    "velocity_unit": "NOT_VERIFIED; raw scale",
+    "median": 17.0,
+    "mean": 20.75484395962084,
+    "q25": 2.0,
+    "q75": 34.0,
+    "zero": 448,
+    "gt120": 107,
+    "sample_design": "unknown; event timestamps irregular",
+    "top_day_fraction": 0.3969297763311267,
+    "exploratory_test": {
+      "classification": "EXPLORATORY",
+      "H0": "daily mean of within-segment peak-minus-midday recorded velocity = 0",
+      "H1": "different from 0, two-sided",
+      "sampling_unit": "day after pairing segment-day medians; repeated roads remain dependent",
+      "n_segment_days": 404,
+      "n_days": 26,
+      "window_local": "peak 07:00-08:59 and 16:00-17:59; midday 10:00-14:59",
+      "multiplicity": "one exploratory primary contrast; no confirmatory claim",
+      "unit": "raw velocity unit NOT VERIFIED",
+      "estimate": -3.4591563737366524,
+      "ci95_bootstrap": [
+        -10.071728507862613,
+        1.791428098453245
+      ],
+      "t": -1.1166117160441258,
+      "p": 0.27477773446616965,
+      "df": 25,
+      "median_day_difference": 0.0,
+      "leave_one_day_out_range": [
+        -3.1975226286861185,
+        -3.597522628686119,
+        -3.3175226286861186,
+        -3.597522628686119,
+        -3.597522628686119,
+        -3.595984167147657,
+        -3.6461589923224818,
+        -1.697522628686118,
+        -3.4175226286861182,
+        -3.52475667123931,
+        -3.9029771741406636,
+        -3.5855226286861184,
+        -3.6426135377770272,
+        -3.802977174140663,
+        -3.6003133263605362,
+        -1.197522628686118,
+        -3.837522628686118,
+        -3.774941983524828,
+        -3.257522628686118,
+        -3.765522628686118,
+        -3.555022628686118,
+        -3.677522628686118,
+        -3.987522628686118,
+        -3.4126246695024447,
+        -4.110855962019452,
+        -3.637522628686119
+      ],
+      "assumptions": "day-level exchangeability not established; serial dependence and measurement selection limit p-value",
+      "sensitivity_0_120_mean_day_difference": -3.4269885415688206
+    }
+  },
+  "GT-01": {
+    "rows": 639,
+    "regions_including_nested_totals": 71,
+    "years": [
+      2022,
+      2023,
+      2024
+    ],
+    "national": [
+      {
+        "year": 2022,
+        "crashes": 11457.0,
+        "deaths": 6397.0,
+        "injuries": 7804.0
+      },
+      {
+        "year": 2023,
+        "crashes": 22067.0,
+        "deaths": 11628.0,
+        "injuries": 15292.0
+      },
+      {
+        "year": 2024,
+        "crashes": 23667.0,
+        "deaths": 11101.0,
+        "injuries": 17424.0
+      }
+    ],
+    "missing_values": 2,
+    "crash_pct_change_2023_2024": 7.2506457606380526,
+    "death_pct_change_2023_2024": -4.532163742690054,
+    "warning": "Counts; no exposure. Regional totals nested; no sum over all geographic rows. No causal test of annual counts.",
+    "regional_reconciliation_failures": 3
+  },
+  "GT-10": {
+    "rows": 107,
+    "roads": 19,
+    "top_road": {
+      "road": "QL.43",
+      "records": 23
+    },
+    "period": "snapshot updated 2025-12-02; current treatment status unverified",
+    "selection": "agency hazard inventory, not crash events",
+    "visibility_mentioned": 48,
+    "curve_mentioned": 105,
+    "treatment_nonempty": 19,
+    "untreated_nonempty": 89,
+    "sensitivity_exact_visibility_phrase": 16
+  },
+  "GT-11": {
+    "rows": 58,
+    "roads": 17,
+    "top_road": {
+      "road": "QL.4G",
+      "records": 15
+    },
+    "period": "snapshot updated 2025-12-02; current treatment status unverified",
+    "selection": "agency hazard inventory, not crash events"
+  },
+  "GT-04": {
+    "rows": 1125,
+    "types": {
+      "node": 1026,
+      "way": 88,
+      "relation": 11
+    },
+    "highway_tagged": 53,
+    "crossing_tagged": 5,
+    "schools_tagged": 1,
+    "bbox": [
+      106.797,
+      10.868,
+      106.801,
+      10.872
+    ],
+    "warning": "convenience sample; ways may extend outside bbox; absent tags do not establish physical absence; no distances calculated"
+  },
+  "GT-20": {
+    "rows": 82,
+    "reported_annotation_sum": 19748,
+    "min_count": 32,
+    "max_count": 1446,
+    "imbalance_ratio": 45.1875,
+    "warning": "publisher class summary; not independently counted annotations, not road prevalence; label translation audit needed"
+  },
+  "GT-12": {
+    "am": {
+      "agency": 1,
+      "calendar": 1,
+      "routes": 224,
+      "stops": 7670,
+      "times": 100117,
+      "trips": 3024
+    },
+    "md": {
+      "agency": 1,
+      "calendar": 1,
+      "routes": 224,
+      "stops": 7670,
+      "times": 224166,
+      "trips": 6713
+    },
+    "pm": {
+      "agency": 1,
+      "calendar": 1,
+      "routes": 224,
+      "stops": 7670,
+      "times": 110323,
+      "trips": 3301
+    }
+  }
+}

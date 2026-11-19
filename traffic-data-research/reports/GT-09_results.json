@@ -1,0 +1,48 @@
+{
+  "VNTraffic": {
+    "box_rows": 16036,
+    "frames": 501,
+    "frame_min": 0,
+    "frame_max": 500,
+    "tracks": 85,
+    "json_tracks": 205,
+    "json_box_count": 16036,
+    "duplicate_frame_track": 2,
+    "nonpositive_boxes": 0,
+    "tracks_with_gaps": 55,
+    "track_length_median_frames": 169.0,
+    "boxes_per_frame_median": 32.0,
+    "boxes_per_frame_range": [
+      27,
+      41
+    ],
+    "class_labels": "absent in TXT and JSON",
+    "calibration": "not supplied; no TTC/PET/physical speed computed",
+    "dates": "record publication 2026-01-09; video observation date unknown",
+    "selection": "one video per subset; AICC22 excluded from Vietnam inference",
+    "json_txt_box_disagreements": 8771
+  },
+  "AICC22-Custom": {
+    "box_rows": 1185,
+    "frames": 198,
+    "frame_min": 3,
+    "frame_max": 200,
+    "tracks": 21,
+    "json_tracks": 25,
+    "json_box_count": 2439,
+    "duplicate_frame_track": 0,
+    "nonpositive_boxes": 0,
+    "tracks_with_gaps": 1,
+    "track_length_median_frames": 26.0,
+    "boxes_per_frame_median": 6.0,
+    "boxes_per_frame_range": [
+      4,
+      9
+    ],
+    "class_labels": "absent in TXT and JSON",
+    "calibration": "not supplied; no TTC/PET/physical speed computed",
+    "dates": "record publication 2026-01-09; video observation date unknown",
+    "selection": "one video per subset; AICC22 excluded from Vietnam inference",
+    "json_txt_box_disagreements": 2301
+  }
+}

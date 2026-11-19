@@ -1,0 +1,18 @@
+test_chainage (test_pipeline.ProtocolTests) ... ok
+test_crs (test_pipeline.ProtocolTests) ... ok
+test_date_timezone (test_pipeline.ProtocolTests) ... ok
+test_historical_rates_only (test_pipeline.ProtocolTests) ... ok
+test_inventory (test_pipeline.ProtocolTests) ... ok
+test_provider_archive_checksums (test_pipeline.ProtocolTests) ... ok
+test_rate (test_pipeline.ProtocolTests) ... ok
+test_raw_integrity (test_pipeline.ProtocolTests) ... ok
+test_region_normalization (test_pipeline.ProtocolTests) ... ok
+test_scores (test_pipeline.ProtocolTests) ... ok
+test_excludes_headers_and_form_state (test_public_manifest.PublicManifestTests) ... ok
+test_rejects_embedded_credentials (test_public_manifest.PublicManifestTests) ... ok
+test_removes_sensitive_query_and_fragment (test_public_manifest.PublicManifestTests) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.239s
+
+OK

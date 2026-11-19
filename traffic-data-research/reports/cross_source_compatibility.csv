@@ -1,0 +1,6 @@
+﻿source_a,source_b,join_key,matched_road_labels,labels,compatibility,independent_corroboration
+GT-10,GT-11,exact stripped road label,9.0,QL.279D;QL.43;QL.4G;ĐT.101;ĐT.102;ĐT.107;ĐT.109;ĐT.114;ĐT.117,"same snapshot date and agency; road overlap only, not event or coordinate match",False
+GT-01,GT-17,"year, national totals",,2022;2023;2024,population denominator derived from historical compiled NSO values; geographic national coverage plausible; definitions need checking,False
+GT-06,GT-07,city only,,Ho Chi Minh,2025 versus 2020-2021; different coverage and data collection; no record-level join,False
+GT-04,GT-12,coordinates,,different cities,small HCMC bbox vs Hanoi GTFS 2018; join not performed,False
+GT-08,GT-09,none,,different videos/cities/cameras,anomaly masks vs tracking; no common events or exposure,False

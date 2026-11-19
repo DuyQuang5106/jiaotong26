@@ -1,5 +1,6 @@
 """Audit the Git index for local-only artifacts and credential-shaped values."""
 import json
+import hashlib
 import re
 import subprocess
 from pathlib import Path
@@ -20,6 +21,12 @@ def main():
     paths = [p for p in paths if p]
     failures = []
     total = 0
+    input_manifest = ROOT / 'traffic-data-research/registry/input_manifest.json'
+    expected_inputs = {}
+    if input_manifest.exists():
+        for entry in json.loads(input_manifest.read_text(encoding='utf-8')):
+            name = 'traffic-data-research/' + entry['path'].replace('\\', '/')
+            expected_inputs[name] = entry['sha256']
     for name in paths:
         path = Path(name)
         if (FORBIDDEN_PARTS.intersection(path.parts) or path.suffix.lower() in FORBIDDEN_SUFFIXES
@@ -32,6 +39,8 @@ def main():
             failures.append((name, 'symlink'))
         content = subprocess.check_output(['git', 'show', ':' + name], cwd=ROOT)
         total += len(content)
+        if name in expected_inputs and hashlib.sha256(content).hexdigest() != expected_inputs[name]:
+            failures.append((name, 'indexed input bytes differ from authoritative checksum'))
         if len(content) > 10_000_000:
             failures.append((name, 'file exceeds publication limit of 10 MB'))
         if path.suffix.lower() not in {'.xlsx', '.png'} and any(p.search(content) for p in PATTERNS):
