@@ -10,3 +10,4 @@
 *.png binary
 # Preserve authoritative input bytes and their published checksums.
 traffic-data-research/input/** -text
+data/** -text
