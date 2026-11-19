@@ -1,0 +1,9 @@
+# Local skill checkouts and machine-specific tooling are not project sources.
+.skill-sources/
+.env
+.env.*
+*.key
+*.pem
+__pycache__/
+node_modules/
+.venv*/

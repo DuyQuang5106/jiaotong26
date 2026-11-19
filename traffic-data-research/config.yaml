@@ -1,0 +1,9 @@
+seed: 42
+research_date_local: '2026-11-19'
+timezone: Asia/Ho_Chi_Minh
+max_source_bytes: 500000000
+max_total_bytes: 2000000000
+priority_sources: [GT-01, GT-04, GT-07, GT-08, GT-09, GT-10]
+bootstrap_replicates: 5000
+osm_bbox: [106.797, 10.868, 106.801, 10.872]
+evidence_weights: [0.25, 0.15, 0.20, 0.15, 0.15, 0.10]

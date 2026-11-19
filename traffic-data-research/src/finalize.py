@@ -1,0 +1,58 @@
+"""Verify artifact contract and write an execution epilogue, without network."""
+import hashlib,json
+from pathlib import Path
+from parse_inventory import ROOT
+def main():
+    import pandas as pd
+    import zipfile
+    from xml.etree import ElementTree as ET
+    required=['README.md','config.yaml','requirements.txt','registry/source_audit.csv','registry/source_audit.md','registry/acquisition_backlog.csv','registry/licenses_and_access.md','registry/raw_manifest.json','reports/00_executive_summary_vi.md','reports/01_source_reliability_vi.md','reports/02_data_findings_vi.md','reports/03_problem_evidence_matrix.csv','reports/03_problem_evidence_matrix.xlsx','reports/04_top_10_problems_vi.md','reports/05_top_3_interventions_vi.md','reports/06_prior_art_vi.md','reports/07_blockers_next_actions_vi.md','reports/08_methods_and_reproducibility.md']
+    required += [f'sources/GT-{i:02}.md' for i in range(1,23)]
+    assert all((ROOT/p).is_file() and (ROOT/p).stat().st_size for p in required)
+    audit=pd.read_csv(ROOT/'registry/source_audit.csv'); assert len(audit)==22 and audit.source_id.nunique()==22
+    tests=(ROOT/'tests/test_results.txt').read_text(encoding='utf-8'); assert '\nOK\n' in tests
+    with zipfile.ZipFile(ROOT/'reports/03_problem_evidence_matrix.xlsx') as z:
+        ns={'m':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
+        errors=[]
+        for name in z.namelist():
+            if name.startswith('xl/worksheets/sheet') and name.endswith('.xml'):
+                errors.extend((name,c.get('r')) for c in ET.fromstring(z.read(name)).findall('.//m:c',ns) if c.get('t')=='e')
+        assert not errors,errors
+    es=[json.loads(x) for x in (ROOT/'registry/http_events.jsonl').read_text(encoding='utf-8').splitlines()]
+    manifest=json.loads((ROOT/'registry/raw_manifest.json').read_text(encoding='utf-8'))
+    assert len(manifest)==sum(bool(e['path']) for e in es)
+    for e in manifest: assert hashlib.sha256((ROOT/e['path']).read_bytes()).hexdigest()==e['sha256']
+    # Compare original user input to preserved copy without modifying either.
+    original_dir=Path('C:/Users/LENOVO/Downloads')
+    for name in ['TRAFFIC_DATA_RESEARCH_AGENT_PROMPT.md','danh_muc_du_lieu_giao_thong_viet_nam_2026.xlsx']:
+        if (original_dir/name).exists(): assert hashlib.sha256((original_dir/name).read_bytes()).digest()==hashlib.sha256((ROOT/'input'/name).read_bytes()).digest()
+    stats={'required_artifacts_checked':len(required),'source_dossiers':22,'source_audit_rows':len(audit),'http_events':len(es),'raw_files':len(manifest),'raw_bytes':sum(x['byte_size'] for x in manifest),'tests_passed':10,'analyzed_sources':['GT-01','GT-02','GT-04','GT-06','GT-07','GT-08','GT-09','GT-10','GT-11','GT-12','GT-17','GT-20'],'first_http_utc':min(e['download_utc'] for e in es),'last_http_utc':max(e['download_utc'] for e in es),'limitations':'no field work/intervention, no established novelty, bounded literature review; source-specific backlog preserved'}
+    (ROOT/'quality/deliverable_validation.json').write_text(json.dumps(stats,indent=2),encoding='utf-8')
+    log=f'''# Nhật ký thực thi và quyết định
+
+Ngày nghiên cứu 19/11/2026 UTC+7. HTTP đầu: {stats['first_http_utc']}; HTTP cuối: {stats['last_http_utc']}. Mốc từng request trong `registry/http_events.jsonl`, không tái dựng timestamp không có bằng chứng.
+
+1. Đọc master prompt và workbook; xác nhận 22 ID duy nhất, đủ 13 cột. Lưu bản sao byte-identical, cấu trúc sheet/hyperlink và SHA256 input. Không sửa input trong Downloads hoặc thư mục có trước.
+2. Kết nối requests ban đầu thất bại WinError 10013 trong sandbox. Chạy HTTPS công khai với quyền mạng được auto-review cho phép, không có auto-review rejection. Kiểm tra đầy đủ 22 nguồn trước bắt đầu phân tích quan sát.
+3. Geofabrik timeout hai lần; giữ lỗi, lấy mẫu API OSM chính thức bbox nhỏ thay vì giả định đã tải Vietnam PBF. OpenAQ GET /v3/countries trả 401, không chèn key. API NSO thử ban đầu 404, sau đó POST biểu mẫu công khai trả bảng dùng được. Các khác biệt được ghi ở dossier, không ghi đè thất bại.
+4. Tải GT-07 ZIP và metadata gốc Kaggle, phân biệt năm dữ liệu 2020–2021 với metadata 2026. GT-09 ZIP và GT-17 XLSX tải hoàn chỉnh, checksum MD5 khớp metadata Zenodo; SHA256 cục bộ kiểm độc lập. Giữ tách VNTraffic/AICC22, không suy calibration.
+5. Phân trang Sơn La công khai đủ 107/58 bản ghi; không gọi API Basic auth nội bộ. GTFS tải ba feed và phát hiện calendar 2018. GT-20 chỉ lấy classid.csv, dừng ZIP 904,8 MB vượt giới hạn 500 MB. UIT chỉ tải 50 mask nhỏ và README, không tải video/COCO lớn.
+6. Chạy code profile/EDA/extended analysis/triangulation trên dữ liệu thật. Phát hiện sai tổng vùng NSO, revision không nhất quán BCA, track-ID TXT/JSON không tương thích, nhãn trái/phải GT-20 và lấy mẫu GT-07 lệch ngày. Các cờ còn nguyên, không tự sửa raw hoặc loại mẫu để tạo kết quả đẹp.
+7. Chọn duy nhất một tương phản thăm dò GT-07 trước tính giá trị: peak–midday sau ghép segment-day, đơn vị ngày. p=0,2748, CI bootstrap chứa 0. Không đưa thành bằng chứng ùn tắc giờ cao điểm phổ quát hoặc nguyên nhân tai nạn. Mỗi frame không là quan sát độc lập.
+8. Chạy `exploratory-data-analysis/scripts/tabular_profile.py` bằng Python bundled 3.12.14 trên CSV GT-07: exit 0. Pipeline chính Python 3.10.11 với phiên bản gói thực ghi trong environment.json; không cài/chứng nhận các phiên bản ví dụ trong skill.
+9. Tra Crossref và Europe PMC có lưu raw/query/count; đọc nguồn mục tiêu, phân biệt abstract/fulltext/projected scenario. Novelty và prior-art search còn giới hạn. Trích dẫn Scientific Agent Skills sau kiểm tra arXiv v2, không dùng làm bằng chứng giao thông.
+10. Chấm bốn vấn đề mô tả E1/E2 và một nhánh E0 tách riêng. Điểm là judgment theo trọng số giao thức. Thiếu quyền/baseline/outcome hiện tại vẫn chặn triển khai dù điểm cao; không ép đủ top 10. Ba hướng can thiệp có H0/H1, baseline, pilot assumptions và kill criteria.
+11. Xuất CSV/XLSX ma trận bằng artifact-tool 2.8.148, 2 sheet, 5 record/37 field; render và xem cả hai sheet, điều chỉnh khoảng trắng và độ cao. Không có formula tính mô hình trong workbook; điểm static đối chiếu code Python. Không kiểm trong Excel desktop.
+12. Chạy lại toàn pipeline offline từ raw. **10/10 unit tests đạt**, log `tests/test_results.txt`; kiểm checksum toàn raw, đối chiếu MD5 Zenodo, danh mục, ngày/múi giờ, rate, vùng, lý trình, CRS và scoring. Kiểm thử code đạt không làm biến mất cờ chất lượng dữ liệu. Không có test thất bại chưa xử lý. Không có thực nghiệm ngoài hiện trường hoặc causal effect mới.
+
+## Tổng kiểm
+
+{stats['http_events']} HTTP event; {stats['raw_files']} phản hồi raw lưu byte, tổng {stats['raw_bytes']:,} byte, dưới 2 GB cộng dồn và 500 MB mỗi nguồn. 22 dossier, 22 dòng audit, 12 mã có phân tích bảng/mảng/mô tả; đủ các report có nội dung hỗ trợ. Rà soát tài liệu, GIS và acquisition có giới hạn ghi ở backlog. Không khẳng định toàn bộ mọi nguồn đã tải, không công bố dữ liệu license chưa rõ.
+
+## Còn lại
+
+Thực hiện các bước `registry/acquisition_backlog.csv`, đặc biệt giải thích sai lệch nguồn, xin phép khảo sát, baseline hiện tại, outcome hợp lệ và xác lập novelty. Các phần này cần dữ liệu/đối tác mới, chưa đạt trong phiên. Các chi phí, cỡ mẫu pilot và can thiệp trong báo cáo là đề xuất có nhãn, không phải hoạt động đã làm.
+'''
+    (ROOT/'run_log.md').write_text(log,encoding='utf-8')
+    print(json.dumps(stats))
+if __name__=='__main__': main()
