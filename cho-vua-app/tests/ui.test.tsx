@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/vitest'
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, expect, test } from 'vitest'
 import { iv } from '../src/domain/interval'
 import App from '../src/ui/App'
@@ -34,6 +34,23 @@ test('red findings are listed before yellow ones', () => {
   const lights = Array.from(document.querySelectorAll('.findings .light')).map(e => e.getAttribute('aria-label'))
   expect(lights[0]).toBe('đèn đỏ')
   expect(lights.indexOf('đèn vàng')).toBeGreaterThan(lights.lastIndexOf('đèn đỏ'))
+})
+
+test('ticket button saves a record and shows the ticket', async () => {
+  localStorage.clear()
+  render(<App initial={state({})} startAt="result" />)
+  fireEvent.click(screen.getByRole('button', { name: 'Phiếu kết quả' }))
+  expect(screen.getByRole('heading', { name: 'Phiếu kết quả' })).toBeInTheDocument()
+  expect(JSON.parse(localStorage.getItem('chovua.checks.v1')!)).toHaveLength(1)
+})
+
+test('field mode lists saved checks with tape inputs', () => {
+  localStorage.clear()
+  render(<App initial={state({})} startAt="result" />)
+  fireEvent.click(screen.getByRole('button', { name: 'Phiếu kết quả' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Thực địa' }))
+  expect(screen.getByRole('heading', { name: 'Chế độ thực địa' })).toBeInTheDocument()
+  expect(screen.getAllByLabelText(/Lòi sau/).length).toBe(1)
 })
 
 test('no matching vehicle message', () => {

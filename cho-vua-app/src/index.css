@@ -47,3 +47,8 @@ input, select { font: inherit; padding: 10px; border-radius: 8px; border: 1px so
 .tapper { margin: 12px 0; }
 .photo { width: 100%; height: auto; border-radius: 8px; touch-action: manipulation; }
 .step { font-weight: 600; }
+.top { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+.ticket pre { white-space: pre-wrap; font-size: 13px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 10px; }
+.ticket img { display: block; margin: 8px auto; background: #fff; }
+.record { padding: 10px 0; border-bottom: 1px solid var(--line); }
+@media print { .nav, .choices { display: none; } }
