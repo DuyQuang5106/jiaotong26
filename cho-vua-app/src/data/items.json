@@ -1,0 +1,12 @@
+[
+  { "id": "ong_nhua", "name": "Ống nhựa", "dimsCm": { "l": { "min": 200, "max": 600 }, "w": { "min": 10, "max": 40 }, "h": { "min": 10, "max": 40 } }, "standardLengthsCm": [400, 600], "kgPerUnit": null, "looseMaterial": false, "assumption": true },
+  { "id": "thep_cay", "name": "Thép cây", "dimsCm": { "l": { "min": 600, "max": 1170 }, "w": { "min": 5, "max": 30 }, "h": { "min": 5, "max": 30 } }, "standardLengthsCm": [1170], "kgPerUnit": null, "looseMaterial": false, "assumption": true },
+  { "id": "ton_tam", "name": "Tôn tấm", "dimsCm": { "l": { "min": 150, "max": 600 }, "w": { "min": 90, "max": 120 }, "h": { "min": 2, "max": 20 } }, "standardLengthsCm": [], "kgPerUnit": null, "looseMaterial": false, "assumption": true },
+  { "id": "tu_lanh", "name": "Tủ lạnh", "dimsCm": { "l": { "min": 55, "max": 75 }, "w": { "min": 55, "max": 75 }, "h": { "min": 120, "max": 180 } }, "standardLengthsCm": [], "kgPerUnit": { "min": 40, "max": 80 }, "looseMaterial": false, "assumption": true },
+  { "id": "may_giat", "name": "Máy giặt", "dimsCm": { "l": { "min": 55, "max": 65 }, "w": { "min": 55, "max": 65 }, "h": { "min": 85, "max": 100 } }, "standardLengthsCm": [], "kgPerUnit": { "min": 50, "max": 80 }, "looseMaterial": false, "assumption": true },
+  { "id": "nem", "name": "Nệm", "dimsCm": { "l": { "min": 190, "max": 200 }, "w": { "min": 100, "max": 180 }, "h": { "min": 10, "max": 30 } }, "standardLengthsCm": [], "kgPerUnit": { "min": 10, "max": 40 }, "looseMaterial": false, "assumption": true },
+  { "id": "bao_xi_mang", "name": "Bao xi măng", "dimsCm": { "l": { "min": 55, "max": 65 }, "w": { "min": 35, "max": 45 }, "h": { "min": 10, "max": 15 } }, "standardLengthsCm": [], "kgPerUnit": { "min": 50, "max": 50 }, "looseMaterial": true, "assumption": true },
+  { "id": "cua_go", "name": "Cửa gỗ", "dimsCm": { "l": { "min": 200, "max": 230 }, "w": { "min": 70, "max": 100 }, "h": { "min": 4, "max": 10 } }, "standardLengthsCm": [], "kgPerUnit": { "min": 20, "max": 50 }, "looseMaterial": false, "assumption": true },
+  { "id": "thung_carton", "name": "Thùng carton", "dimsCm": { "l": { "min": 20, "max": 60 }, "w": { "min": 20, "max": 40 }, "h": { "min": 15, "max": 40 } }, "standardLengthsCm": [], "kgPerUnit": { "min": 1, "max": 15 }, "looseMaterial": false, "assumption": true },
+  { "id": "khac", "name": "Hàng khác", "dimsCm": { "l": { "min": 10, "max": 300 }, "w": { "min": 10, "max": 200 }, "h": { "min": 10, "max": 200 } }, "standardLengthsCm": [], "kgPerUnit": null, "looseMaterial": false, "assumption": true }
+]
