@@ -36,3 +36,10 @@ Các skill có sẵn áp dụng tiếp: **statistical-analysis**, **scientific-c
 Chi tiết: [skill và tái lập](reports/revalidation_2026_11_19_v2/07_skill_va_tai_lap_vi.md), [hash và trạng thái](reports/revalidation_2026_11_19_v2/skills_used.json), [log hàm/helper](reports/revalidation_2026_11_19_v2/skill_execution_log.json), [thay đổi kết luận](reports/revalidation_2026_11_19_v2/01_nhung_ket_luan_da_thay_doi_vi.md). Giữ Python 3.10 của nghiên cứu; không tuyên bố tương thích đầy đủ các stack pin mới trong skill. Các helper có lỗi/giới hạn được ghi, không sửa skill global.
 
 Đã thêm lại trích dẫn Kassis et al. (2026), DOI 10.48550/arXiv.2609.00065, trong báo cáo checkpoint; đối chiếu trang arXiv ngày 19/11/2026, bản mới nhất hiển thị v2. Trích dẫn này dành cho quy trình, không hỗ trợ kết luận giao thông.
+
+## Thu hẹp vào track 2 — 19/11/2026
+
+- **brainstorming-research-ideas** (Orchestra Research): đã đọc SKILL.md và áp dụng problem-first, stakeholder rotation, simplicity; giữ 12 hướng đã xét, lọc bốn ứng viên với giả thuyết/điều kiện dừng. Không suy ra điểm giám khảo hoặc hiệu quả từ lịch sử có giải.
+- **Spreadsheets:** tiếp tục đọc OOXML theo chế độ chỉ đọc; quét 73 bản ghi trong nước và 121 bản ghi quốc tế, kiểm ID/hash, giữ ba năm thiếu; 11 nhãn track 2 là phân loại biên tập, không đồng nghĩa 11 giải pháp đúng đối tượng. Không chỉnh hoặc tái tính hai workbook.
+
+Chín nguồn web gốc được đối chiếu ở phạm vi ghi trong `reports/track2_2026_11_19/source_checks.json`; một lần mở trang giao diện Lalamove không thành công được giữ rõ. Đây là bổ sung định tính/prior art, không thay audit 22 nguồn, không là systematic review mới. Có ghi chú WIDEA-060 cần phân biệt xuất xứ công ty với nơi pilot, không sửa input. Code: `src/track2_evidence_scan.py`; đầu ra: [bản ghi quyết định track 2](reports/track2_2026_11_19/README.md).

@@ -1,0 +1,48 @@
+{
+  "as_of_local_date": "2026-11-19",
+  "timezone": "Asia/Bangkok",
+  "domestic_records": 73,
+  "international_records": 121,
+  "international_unique_record_ids": 121,
+  "international_year_missing": 3,
+  "international_mechanism_evidence": {
+    "MÔ TẢ CÓ NGUỒN": 87,
+    "CHỈ TIÊU ĐỀ": 1,
+    "TỪ TIÊU ĐỀ": 10,
+    "MÔ TẢ MỘT PHẦN": 17,
+    "CHỈ TÊN ĐỘI": 6
+  },
+  "international_editorial_track2_count": 11,
+  "international_editorial_track2_ids": [
+    "WIDEA-008",
+    "WIDEA-010",
+    "WIDEA-014",
+    "WIDEA-018",
+    "WIDEA-059",
+    "WIDEA-060",
+    "WIDEA-072",
+    "WIDEA-073",
+    "WIDEA-076",
+    "WIDEA-087",
+    "WIDEA-116"
+  ],
+  "domestic_titles_matching_cargo_terms": 0,
+  "domestic_cargo_terms": [
+    "cồng kềnh",
+    "quá khổ"
+  ],
+  "records_triaged_for_related_prior_art": 12,
+  "selection_method": "11 editorial track-2 records plus WIDEA-111 as pre-trip inspection analogy; all retained with limitations",
+  "interpretation_limits": [
+    "Counts are records, not independent studies, unique products, market share or winner probabilities.",
+    "Missing competition year remains missing; last_reviewed is not an event date.",
+    "Editorial track mapping includes weak/indirect analogies; not all 11 address unsafe bulky loads.",
+    "Zero title matches does not demonstrate novelty or absence of existing products.",
+    "Web verification of selected claims is recorded separately; no full technical review of 121 projects claimed."
+  ],
+  "input_sha256": {
+    "data/traffic_contest_ideas_2022_2025.xlsx": "ff63d3e8254dc2993a39b180c7e9f42e39fb6e734173f07e61ebbfd6e654376d",
+    "data/global_traffic_contest_ideas_2023_2026.xlsx": "f859147c05af2f27552d20fbf2efdfd7e756496bf19dfd60840091b2991e7d4a"
+  },
+  "script_sha256": "d2503802f1211d86b8ccdfb3e748b782f29cd071f432e98027a3961ca8e84f8f"
+}

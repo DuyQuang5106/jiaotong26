@@ -4,6 +4,8 @@
 
 Ưu tiên địa bàn/nhóm người dùng hẹp khi có lợi thế tiếp cận và cơ chế rõ. Không coi địa phương có tổng tai nạn cao nhất, công nghệ mới nhất hoặc đề tài ít xuất hiện nhất là lựa chọn tốt nhất mặc định.
 
+**Phạm vi ưu tiên hiện tại theo yêu cầu người dùng:** track 2 “Đúng hàng – Đúng phương tiện”, tập trung ngăn xe máy/phương tiện thô sơ/xe tự chế vận chuyển hàng không phù hợp, đồng thời có lựa chọn thay thế. [Bốn ứng viên và căn cứ](traffic-data-research/reports/track2_2026_11_19/README.md) tiếp tục từ nghiên cứu trước; các hướng track 1/3 vẫn được giữ làm tham chiếu, không là lựa chọn ưu tiên hiện tại.
+
 ## Chuỗi quyết định
 
 Nguồn thật → quan sát có mẫu số → cơ chế vấn đề tại địa phương → người dùng/đơn vị chịu trách nhiệm → đối chiếu ý tưởng có trước → can thiệp tối thiểu → baseline và phép đánh giá → phù hợp cuộc thi.

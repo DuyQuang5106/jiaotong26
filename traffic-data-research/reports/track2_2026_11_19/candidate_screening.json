@@ -1,0 +1,14 @@
+[
+  {"id":"L01","idea_vi":"Kiểm tra xe–hàng và chuyển phương tiện tại điểm xuất","decision":"SHORTLIST_T2-A","reason_vi":"Đúng đối tượng/quyết định của track; thử được với cửa hàng, nhưng cơ chế và nhu cầu hiện tại còn phải đo."},
+  {"id":"L02","idea_vi":"Ghép chuyến bằng phương tiện phù hợp cho cụm cửa hàng","decision":"SHORTLIST_T2-B","reason_vi":"Thử giải rào cản chi phí/thời gian; dịch vụ nhiều điểm đã có, cần lợi ích tăng thêm và kiểm chặng cuối."},
+  {"id":"L03","idea_vi":"Đóng kiện phù hợp từ lúc bán","decision":"SHORTLIST_T2-C","reason_vi":"Có thể ngăn lỗi trước khi nhận hàng; phải chọn mặt hàng thu gọn/chia được và so nhân viên có kinh nghiệm."},
+  {"id":"L04","idea_vi":"Theo dõi lỏng dây/dịch hàng trên cấu hình đáp ứng điều kiện","decision":"SHORTLIST_T2-D_CONDITIONAL_HARDWARE","reason_vi":"Có phép đo đồ gá; thiếu nhãn nhu cầu, prior art chỉ thị lực căng đã có và cần kiểm định."},
+  {"id":"L05","idea_vi":"Camera phát hiện mọi xe chở hàng cồng kềnh trên toàn tỉnh","decision":"PARK","reason_vi":"Mẫu hiện có thiếu nhãn chuyên biệt/calibration; quá rộng cho bản đầu và chưa có cơ chế giải quyết sau cảnh báo."},
+  {"id":"L06","idea_vi":"Sàn gọi xe chở hàng tổng quát","decision":"PARK","reason_vi":"Đã có nền tảng vận chuyển; chưa chỉ rõ khoảng trống riêng về ngăn cấu hình không phù hợp."},
+  {"id":"L07","idea_vi":"Tặng điểm an toàn cho người giao hàng","decision":"PARK","reason_vi":"Chưa có thước đo tải hàng đáng tin hoặc thiết kế chống lách; có prior art chính sách, không dự đoán hiệu quả từ giải thưởng."},
+  {"id":"L08","idea_vi":"Cho thuê hoặc tự thiết kế xe cargo mới","decision":"PARK","reason_vi":"Có prior art; chi phí, điều kiện lưu hành và bảo trì chưa được xác minh; ưu tiên xe phù hợp sẵn có."},
+  {"id":"L09","idea_vi":"Định tuyến tránh đoạn hẹp cho hàng quá khổ","decision":"PARK","reason_vi":"Đổi tuyến không khắc phục cấu hình xe–hàng không phù hợp; có thể đẩy rủi ro sang nơi khác."},
+  {"id":"L10","idea_vi":"Quy trình người chở được yêu cầu đổi xe/từ chối hàng không phù hợp","decision":"MERGE_IN_T2-A","reason_vi":"Là cơ chế vận hành cần thử cùng cửa hàng/đối tác; chưa có bằng chứng quy trình độc lập đủ giải quyết vấn đề."},
+  {"id":"L11","idea_vi":"Đo quá tải chỉ bằng load cell","decision":"PARK_AS_STANDALONE","reason_vi":"Khối lượng không thay kích thước/khả năng cố định; ZERO ODOL là prior art gần; cân có thể là phần trạm T2-A."},
+  {"id":"L12","idea_vi":"App tuyên truyền chở hàng đúng cách","decision":"PARK_AS_STANDALONE","reason_vi":"Chưa có bằng chứng thiếu kiến thức là rào cản chính; nội dung hướng dẫn có thể hỗ trợ quy trình nhưng cần đo hành động."}
+]

@@ -4,6 +4,12 @@ Mục tiêu chính: tìm vấn đề cụ thể tại địa phương/nhóm ngư
 
 ## Kết quả phục vụ chọn ý tưởng
 
+- **App demo CHỞ VỪA:** [cho-vua-app/](cho-vua-app/README.md) — cách chạy, [kịch bản demo](cho-vua-app/DEMO_vi.md), [16 test case nhập tay](cho-vua-app/TESTCASES_nhap_tay.md).
+- **Ý tưởng hiện tại — CHỞ VỪA:** [Tài liệu ý tưởng hợp nhất](traffic-data-research/reports/track2_2026_11_20/CHO_VUA_y_tuong_vi.md) (20/11/2026): định vị, luồng chụp ảnh → loại hàng, kích cỡ, luật, dịch vụ, bộ luật lõi, công nghệ, prior art, việc cần làm trước 15/12. Chưa có dữ liệu thực địa hay prototype.
+- **Track 2 (19/11):** [Bốn hướng ý tưởng, ngách khảo sát và phép thử cần có](traffic-data-research/reports/track2_2026_11_19/README.md). Đã quét thêm 121 bản ghi quốc tế, giữ rõ prior art và chưa có điểm “10/10” hoặc hiệu quả được xác nhận.
+- **Track 2 — luật chở hàng và phần app kiểm được:** [Luật 36/2024, NĐ 168/2024, NĐ 238/2026](traffic-data-research/reports/track2_2026_11_20/luat_cho_hang_vi.md) (20/11/2026).
+- **Track 2 — công nghệ đo hàng từ ảnh:** [Rà soát CV và thiết kế đèn xanh/vàng/đỏ cho CHỞ VỪA](traffic-data-research/reports/track2_2026_11_20/cv_do_kich_thuoc_vi.md) (20/11/2026, chưa thử trên ảnh thật).
+- **Nguyên tắc chọn ý tưởng & checklist 5 câu:** [AGENTS.md](AGENTS.md) (nhập 20/11/2026, đã đối chiếu số liệu với repo).
 - **Mới nhất:** [Checkpoint kiểm chứng bổ sung — 10 phát hiện và 10 ý tưởng ứng viên](traffic-data-research/reports/revalidation_2026_11_19_v2/README.md)
 - [Hiệu chỉnh kết luận GT-07/GT-09 và các kết quả giữ nguyên](traffic-data-research/reports/revalidation_2026_11_19_v2/01_nhung_ket_luan_da_thay_doi_vi.md)
 - [10 quy luật/mẫu hình ý tưởng + 10 phát hiện giao thông](traffic-data-research/reports/discovery/README.md)

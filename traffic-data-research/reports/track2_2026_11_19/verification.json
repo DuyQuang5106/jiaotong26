@@ -1,0 +1,14 @@
+{
+  "independent_scan_replay_identical": {
+    "inventory_scan.json": true,
+    "international_prior_art_triage.csv": true
+  },
+  "candidate_longlist": 12,
+  "shortlist": 4,
+  "input_hashes_preserved": true,
+  "broken_local_markdown_links": [],
+  "hypotheses_not_empirical_findings": true,
+  "field_trials_run": false,
+  "winner_prediction_run": false,
+  "score_out_of_10_assigned": false
+}
