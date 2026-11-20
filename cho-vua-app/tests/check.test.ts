@@ -28,6 +28,21 @@ test('manual loaded entry is used without a photo', () => {
   expect(r.sizeSource).toBe('nhập tay')
 })
 
+// Demo script scenes (DEMO_vi.md) that need no photo.
+// Typical fridge 1,2–1,8 m + rack 0,7–0,9 m straddles 2 m (yellow); the demo enters the measured 1,6 m.
+test('demo 3: standing fridge (1,6 m) on a motorbike is red E03', () => expect(runCheck(state({ itemId: 'tu_lanh', measured: { h: iv(159, 161) } })).findings.find(f => f.code === 'E03')!.light).toBe('red'))
+test('demo 3b: unmeasured fridge is only yellow E03', () => expect(runCheck(state({ itemId: 'tu_lanh' })).findings.find(f => f.code === 'E03')!.light).toBe('yellow'))
+test('demo 4: goods covering the plate is red E04', () => {
+  const s = state({})
+  expect(runCheck({ ...s, answers: { ...s.answers, plateAndLightsVisible: false } }).findings.find(f => f.code === 'E04')!.light).toBe('red')
+})
+test('demo 5: unregistered 3–4 wheel motor cart is red E09 and still gets vehicle options', () => {
+  const s = state({ vehicle: 'motor_3_4_wheel' })
+  const r = runCheck({ ...s, answers: { ...s.answers, registered: false } })
+  expect(r.findings.find(f => f.code === 'E09')!.light).toBe('red')
+  expect(r.options.length).toBeGreaterThan(0)
+})
+
 test('typical size is labelled as an assumption', () => expect(runCheck(state({})).sizeSource).toBe('kích thước điển hình (giả định)'))
 
 test('cement bags trigger the loose-material check', () => expect(runCheck(state({ itemId: 'bao_xi_mang' })).findings.some(f => f.code === 'E10')).toBe(true))
