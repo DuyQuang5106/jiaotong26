@@ -8,9 +8,12 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "server": "tsx server/index.ts",
+    "typecheck:server": "tsc -p tsconfig.server.json"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.11.0",
     "qrcode": "^1.5.4",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
@@ -25,6 +28,7 @@
     "@vitejs/plugin-react": "^6.1.2",
     "jsdom": "^29.1.1",
     "oxlint": "^1.90.0",
+    "tsx": "^4.23.15",
     "typescript": "~7.0.2",
     "vite": "^8.3.6",
     "vitest": "^5.1.1"
