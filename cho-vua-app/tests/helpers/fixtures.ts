@@ -1,6 +1,7 @@
 import { iv } from '../../src/domain/interval'
 import type { CargoRequirement, ErrorCode, Finding, LoadInput } from '../../src/domain/types'
 import { ITEMS, type ItemCategory, type ItemId } from '../../src/items/requirement'
+import type { CheckState } from '../../src/ui/check'
 
 /** A motorbike load where every check passes. */
 export function base(): LoadInput {
@@ -33,6 +34,17 @@ export function item(id: ItemId): ItemCategory {
   const it = ITEMS.find(x => x.id === id)
   if (!it) throw new Error(`no item ${id}`)
   return it
+}
+
+/** A check at the counter: motorbike, HCM, 5 km, one carton, every answer good. */
+export function state(p: Partial<CheckState>): CheckState {
+  return {
+    stage: 'pre_load', vehicle: 'motorbike', city: 'HCM', km: 5,
+    itemId: 'thung_carton', qty: 1, measured: {}, manualLoad: {}, photo: {},
+    answers: { plateAndLightsVisible: true, redMarker: true, lashingOk: true, carryingBulky: false, towing: false, looseCovered: null, registered: null, bodyLengthCm: null },
+    weightKgManual: null, vehicleMaxKg: null,
+    ...p,
+  }
 }
 
 export function code(r: { findings: Finding[] }, c: ErrorCode): Finding {

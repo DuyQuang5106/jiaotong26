@@ -1,4 +1,4 @@
-import * as pkg from 'js-aruco2'
+import * as vendor from '../vendor/js-aruco2/aruco.js'
 import type { Pt, Quad } from './homography'
 import type { Reference } from './measure'
 
@@ -14,14 +14,7 @@ interface ArNamespace {
 }
 export interface ImageLike { data: Uint8ClampedArray; width: number; height: number }
 
-// js-aruco2 is CommonJS that assigns `this.AR`; depending on the bundler this lands on
-// the module exports or on globalThis.
-function ar(): ArNamespace {
-  const m = pkg as unknown as { AR?: ArNamespace; default?: { AR?: ArNamespace } }
-  const found = m.AR ?? m.default?.AR ?? (globalThis as { AR?: ArNamespace }).AR
-  if (!found) throw new Error('js-aruco2 not loaded')
-  return found
-}
+const ar = (): ArNamespace => vendor.AR as ArNamespace
 
 let detector: { detect(img: ImageLike): ArMarker[] } | null = null
 
