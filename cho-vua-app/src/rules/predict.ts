@@ -26,7 +26,8 @@ type Geometry = Pick<LoadInput, 'sideLeftCm' | 'sideRightCm' | 'rearCm' | 'heigh
 function place(along: Interval, across: Interval, h: Interval, rack: RackAssumption): Geometry {
   const side = clamp0(scale(sub(across, rack.widthCm), 0.5))
   const rear = clamp0(sub(sub(along, rack.lengthCm), rack.forwardCm))
-  return { sideLeftCm: side, sideRightCm: side, rearCm: rear, heightCm: add(h, rack.heightCm), extendsBeyondVehicle: rear.min > 0 }
+  // null when it may or may not stick out, so the red-marker check stays visible.
+  return { sideLeftCm: side, sideRightCm: side, rearCm: rear, heightCm: add(h, rack.heightCm), extendsBeyondVehicle: rear.min > 0 ? true : rear.max > 0 ? null : false }
 }
 
 const RANK: Record<Light, number> = { green: 0, yellow: 1, red: 2 }

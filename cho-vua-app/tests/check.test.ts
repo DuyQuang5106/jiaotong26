@@ -3,9 +3,9 @@ import { iv } from '../src/domain/interval'
 import { runCheck } from '../src/ui/check'
 import { state } from './helpers/fixtures'
 
-// ống 395–400 cm được làm tròn về 398–402 cm (chuẩn 400). Cận trên 402 > thùng 400 cm của Tải 2000kg → chọn Tải 2500kg (theo cận trên).
+// Typed 400 cm becomes 399–401 cm (±1 cm). Upper bound 401 > the 400 cm bed of Tải 2000kg → Tải 2500kg.
 test('runCheck: 4 m pipe pre_load motorbike → red and Tải 2500kg', () => {
-  const r = runCheck(state({ itemId: 'ong_nhua', measured: { l: iv(395, 400) } }))
+  const r = runCheck(state({ itemId: 'ong_nhua', measured: { l: iv(399, 401) } }))
   expect(r.overall).toBe('red')
   expect(r.options[0].vehicle.name).toBe('Xe tải 2500kg')
 })
@@ -16,10 +16,49 @@ test('runCheck: loaded without measurement → E01–E03 yellow and still option
   expect(r.options.length).toBeGreaterThan(0)
 })
 
-test('photo measurement wins over manual entry', () => {
-  const r = runCheck(state({ stage: 'loaded', manualLoad: { sideLeftCm: iv(0, 1) }, photo: { refKind: 'plate', rear: { sideLeftCm: iv(40, 45), sideRightCm: iv(0, 2), heightCm: iv(120, 125) } } }))
+test('photo measurement is used when nothing was taped', () => {
+  const r = runCheck(state({ stage: 'loaded', photo: { refKind: 'plate', rearTapped: true, rear: { sideLeftCm: iv(40, 45), sideRightCm: iv(0, 2), heightCm: iv(120, 125) } } }))
   expect(r.findings.find(f => f.code === 'E01')!.light).toBe('red')
   expect(r.sizeSource).toBe('biển số')
+})
+
+test('a tape value wins over the photo for that dimension', () => {
+  const r = runCheck(state({ stage: 'loaded', manualLoad: { sideLeftCm: iv(44, 46) }, photo: { refKind: 'aruco', rearTapped: false, rear: { sideLeftCm: iv(0, 2), sideRightCm: iv(0, 2), heightCm: iv(120, 125) } } }))
+  expect(r.findings.find(f => f.code === 'E01')!.light).toBe('red')
+})
+
+test('hand-tapped reference cannot give green on E01–E03', () => {
+  const r = runCheck(state({ stage: 'loaded', manualLoad: { rearCm: iv(10, 12) }, photo: { refKind: 'plate', rearTapped: true, rear: { sideLeftCm: iv(0, 2), sideRightCm: iv(0, 2), heightCm: iv(120, 125) } } }))
+  expect(r.findings.find(f => f.code === 'E01')!.light).toBe('yellow')
+  expect(r.findings.find(f => f.code === 'E03')!.light).toBe('yellow')
+  expect(r.findings.find(f => f.code === 'E02')!.light).toBe('green') // taped, not capped
+})
+
+test('detected card may give green', () => {
+  const r = runCheck(state({ stage: 'loaded', manualLoad: { rearCm: iv(10, 12) }, photo: { refKind: 'aruco', rearTapped: false, rear: { sideLeftCm: iv(0, 2), sideRightCm: iv(0, 2), heightCm: iv(120, 125) } } }))
+  expect(r.findings.find(f => f.code === 'E01')!.light).toBe('green')
+})
+
+test('pre-load with typical sizes is never green on E01–E03', () => {
+  const r = runCheck(state({ qty: 20 }))
+  expect(['E01', 'E02', 'E03'].map(c => r.findings.find(f => f.code === c)!.light)).toEqual(['yellow', 'yellow', 'yellow'])
+  expect(r.overall).not.toBe('green')
+})
+
+test('pre-load with measured load sizes can be green', () => {
+  const r = runCheck(state({ measured: { l: iv(39, 41), w: iv(29, 31), h: iv(29, 31) } }))
+  expect(r.findings.find(f => f.code === 'E01')!.light).toBe('green')
+})
+
+test('uncertain rear overhang keeps the red-marker check (E05 yellow)', () => {
+  const s = state({ stage: 'loaded', manualLoad: { rearCm: iv(0, 45) } })
+  const r = runCheck({ ...s, answers: { ...s.answers, redMarker: false } })
+  expect(r.findings.find(f => f.code === 'E05')?.light).toBe('yellow')
+})
+
+test('a taped 430 cm pipe is not shrunk to 4 m', () => {
+  const r = runCheck(state({ itemId: 'ong_nhua', measured: { l: iv(429, 431) } }))
+  expect(r.options[0].vehicle.bedCm.l).toBeGreaterThanOrEqual(431)
 })
 
 test('manual loaded entry is used without a photo', () => {

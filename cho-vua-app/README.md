@@ -34,6 +34,7 @@ python -X utf8 ../traffic-data-research/src/cho_vua_eval.py chovua_checks.csv --
   - danh mục 10 loại hàng mẫu (`src/data/items.json`);
   - giá chở hàng xe máy: rộng 30–50 cm, dài 30–50 cm, cao 70–90 cm (`src/rules/predict.ts`).
   Cần thay bằng danh mục của cửa hàng thí điểm và số đo giá chở hàng ở thực địa.
+- **Khi nào được ra đèn xanh:** E01–E03 chỉ ra 🟢 khi số đo đến từ thước hoặc từ thẻ chuẩn mà app tự tìm thấy. Nếu số đo đến từ góc chạm tay (biển số, hoặc thẻ không được nhận ra) hoặc từ kích thước điển hình kèm giá chở hàng giả định, đèn xanh bị hạ xuống 🟡 và có ghi lý do. Số đo bằng thước được ưu tiên hơn số đo ảnh cho từng kích thước.
 - **Hằng số sai số khi đo ảnh** (`TAP_ERR_PX`, `OFF_PLANE_REL` trong `src/measure/measure.ts`) là tạm thời. Phải hiệu chỉnh trên ảnh thực địa bằng script đánh giá, với mẫu tách theo xe hoặc theo ngày.
 - **Bảng xe** (`src/data/vehicles.json`) lấy từ trang công bố ngày 20/11/2026.
   - Lalamove chưa có công thức giá; chỉ xe van 500 kg của Ahamove có giá ước tính.

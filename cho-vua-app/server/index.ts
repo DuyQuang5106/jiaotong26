@@ -36,4 +36,4 @@ createServer((req, res) => {
       send(res, 500, { error: 'internal' })
     }
   })
-}).listen(PORT, () => console.log(`CHỞ VỪA classify server on http://localhost:${PORT}`))
+}).listen(PORT, '127.0.0.1', () => console.log(`CHỞ VỪA classify server on http://127.0.0.1:${PORT} (local only; the phone reaches it through the Vite proxy)`))

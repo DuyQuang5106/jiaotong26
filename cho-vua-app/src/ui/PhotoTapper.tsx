@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import { CARD_SIZE_CM, detectMarker } from '../measure/aruco'
-import type { Pt, Quad } from '../measure/homography'
-import { MeasureError, measureRear, measureSide, PLATE_SIZE_CM, type Reference } from '../measure/measure'
-import type { CheckState } from './check'
+import { detectMarker } from '../measure/aruco'
+import type { Pt } from '../measure/homography'
+import type { Reference } from '../measure/measure'
+import { measurePhoto, referenceFromTaps, shouldResetReference, type Photo } from './photoMeasure'
 
 type Mode = 'rear' | 'side'
-type Photo = CheckState['photo']
 
 const CORNERS = ['góc trên trái', 'góc trên phải', 'góc dưới phải', 'góc dưới trái']
 function tapLabels(mode: Mode, nonMotorized: boolean): string[] {
@@ -66,23 +65,11 @@ export function PhotoTapper({ mode, nonMotorized, onDone }: { mode: Mode; nonMot
   }
 
   function finish(reference: Reference, points: Pt[]) {
-    try {
-      const out: Photo = { refKind: reference.kind }
-      if (mode === 'rear') {
-        const [rackLeft, rackRight, cargoLeft, cargoRight, cargoTop, ground] = points
-        out.rear = measureRear(reference, { rackLeft, rackRight, cargoLeft, cargoRight, cargoTop, ground })
-      } else {
-        const [rackRearEnd, cargoRearEnd] = points
-        out.side = measureSide(reference, { rackRearEnd, cargoRearEnd })
-      }
-      onDone(out)
-      setMsg('Đã đo xong.')
-    } catch (e) {
-      if (e instanceof MeasureError && e.reason === 'degenerate_reference') {
-        setMsg(`Không đo được từ 4 góc này — chạm lại 4 góc ${manualName}.`)
-        setRef(null); setCorners([]); setTaps([])
-      } else setMsg('Chưa đủ điểm chạm.')
-    }
+    const out = measurePhoto(mode, reference, points)
+    if (out.ok) { onDone(out.photo); setMsg('Đã đo xong.'); return }
+    setMsg(out.message)
+    setTaps([])
+    if (out.resetReference) { setRef(null); setCorners([]) }
   }
 
   function onTap(e: React.MouseEvent<HTMLCanvasElement>) {
@@ -92,8 +79,7 @@ export function PhotoTapper({ mode, nonMotorized, onDone }: { mode: Mode; nonMot
     if (!ref) {
       const next = [...corners, p]
       if (next.length < 4) { setCorners(next); return }
-      const size = manualKind === 'plate' ? PLATE_SIZE_CM : { w: CARD_SIZE_CM, h: CARD_SIZE_CM }
-      setRef({ kind: manualKind, cornersPx: next as Quad, sizeCm: { ...size } })
+      setRef(referenceFromTaps(manualKind, next))
       setCorners([])
       return
     }
@@ -112,7 +98,7 @@ export function PhotoTapper({ mode, nonMotorized, onDone }: { mode: Mode; nonMot
         <>
           <p className="step">{step}</p>
           <canvas ref={canvas} onClick={onTap} className="photo" />
-          <button onClick={() => { setTaps([]); setCorners([]); if (ref && ref.kind !== 'aruco') setRef(null) }}>Chạm lại</button>
+          <button onClick={() => { setTaps([]); setCorners([]); if (shouldResetReference(ref)) setRef(null) }}>Chạm lại</button>
         </>
       )}
       {msg && <p className="note">{msg}</p>}

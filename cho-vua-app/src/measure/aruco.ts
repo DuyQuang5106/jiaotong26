@@ -1,5 +1,5 @@
 import * as vendor from '../vendor/js-aruco2/aruco.js'
-import type { Pt, Quad } from './homography'
+import { orderQuad, type Pt } from './homography'
 import type { Reference } from './measure'
 
 /** The printed card: ARUCO dictionary, id 0, black border 15 cm per side. */
@@ -23,21 +23,10 @@ export function markerBits(id: number): string {
   return new (ar().Dictionary)(DICTIONARY).codeList[id]
 }
 
-function order(c: Pt[]): Quad {
-  const by = (f: (p: Pt) => number, pick: 'min' | 'max') =>
-    c.reduce((a, b) => ((pick === 'min' ? f(b) < f(a) : f(b) > f(a)) ? b : a))
-  return [
-    by(p => p.x + p.y, 'min'), // top-left
-    by(p => p.x - p.y, 'max'), // top-right
-    by(p => p.x + p.y, 'max'), // bottom-right
-    by(p => p.x - p.y, 'min'), // bottom-left
-  ]
-}
-
 /** Find the reference card in an image; null when it is not visible. */
 export function detectMarker(img: ImageLike): Reference | null {
   detector ??= new (ar().Detector)({ dictionaryName: DICTIONARY })
   const m = detector.detect(img).find(x => x.id === CARD_ID)
   if (!m) return null
-  return { kind: 'aruco', cornersPx: order(m.corners.map(p => ({ x: p.x, y: p.y }))), sizeCm: { w: CARD_SIZE_CM, h: CARD_SIZE_CM } }
+  return { kind: 'aruco', tapped: false, cornersPx: orderQuad(m.corners.map(p => ({ x: p.x, y: p.y }))), sizeCm: { w: CARD_SIZE_CM, h: CARD_SIZE_CM } }
 }

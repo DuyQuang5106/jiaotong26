@@ -22,6 +22,24 @@ test('suggestion fills unanswered questions', () => {
 
 test('self-made look switches to the 3–4 wheel motor vehicle', () => expect(applySuggestion(state({}), r({ looksSelfMade: true })).vehicle).toBe('motor_3_4_wheel'))
 
+test('model vehicle guess does not replace the user choice', () => expect(applySuggestion(state({ vehicle: 'motor_3_4_wheel' }), r({ vehicle: 'motorbike' })).vehicle).toBeUndefined())
+
+test('only warnings from the model are pre-filled, never reassurances', () => {
+  const s = state({})
+  const blank = { ...s, answers: { ...s.answers, plateAndLightsVisible: null, carryingBulky: null } }
+  const p = applySuggestion(blank, r({ plateAndLightsVisible: true, carryingBulky: false }))
+  expect(p.answers!.plateAndLightsVisible).toBeNull()
+  expect(p.answers!.carryingBulky).toBeNull()
+  expect(applySuggestion(blank, r({ carryingBulky: true })).answers!.carryingBulky).toBe(true)
+})
+
+test('self-made look forces the registration question even if the model says motorbike', () => expect(applySuggestion(state({}), r({ looksSelfMade: true, vehicle: 'motorbike' })).vehicle).toBe('motor_3_4_wheel'))
+
+test('the recognition button says the photo is sent for recognition', () => {
+  render(<StepItem s={state({})} set={() => {}} classify={async () => null} />)
+  expect(screen.getByText(/gửi tới máy chủ nhận diện/)).toBeInTheDocument()
+})
+
 test('failed recognition falls back to manual selection', async () => {
   render(<StepItem s={state({})} set={() => {}} classify={async () => null} />)
   fireEvent.change(document.querySelector('input[type=file]')!, { target: { files: [new File(['x'], 'a.jpg', { type: 'image/jpeg' })] } })

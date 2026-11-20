@@ -1,13 +1,22 @@
 export type Pt = { x: number; y: number }
 export type Quad = [Pt, Pt, Pt, Pt]
 
+export type MeasureErrorReason = 'degenerate_reference' | 'missing_taps' | 'bad_taps'
+
 export class MeasureError extends Error {
-  reason: 'degenerate_reference' | 'missing_taps'
-  constructor(reason: 'degenerate_reference' | 'missing_taps') {
+  reason: MeasureErrorReason
+  constructor(reason: MeasureErrorReason) {
     super(reason)
     this.reason = reason
     this.name = 'MeasureError'
   }
+}
+
+/** Put four corners in top-left, top-right, bottom-right, bottom-left order, whatever order they were tapped in. */
+export function orderQuad(c: Pt[]): Quad {
+  const by = (f: (p: Pt) => number, pick: 'min' | 'max') =>
+    c.reduce((a, b) => ((pick === 'min' ? f(b) < f(a) : f(b) > f(a)) ? b : a))
+  return [by(p => p.x + p.y, 'min'), by(p => p.x - p.y, 'max'), by(p => p.x + p.y, 'max'), by(p => p.x - p.y, 'min')]
 }
 
 /** Solve A·x = b (n×n) by Gaussian elimination with partial pivoting. */
