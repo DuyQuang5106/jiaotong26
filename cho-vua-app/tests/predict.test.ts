@@ -6,7 +6,7 @@ import { base, box, code, pipe } from './helpers/fixtures'
 test('4 m pipe on motorbike is red', () => expect(evaluateLoad({ ...base(), ...predictMotorbike(pipe(398, 402)) }).overall).toBe('red'))
 // It may stick out up to 11 cm behind the rack, so the red-marker question (E05) stays open.
 test('carton 40×30×30 on motorbike is within the size limits', () => {
-  const r = evaluateLoad({ ...base(), ...predictMotorbike(box(40, 30, 30)) })
+  const r = evaluateLoad({ ...base(), redMarker: null, ...predictMotorbike(box(40, 30, 30)) })
   expect(['E01', 'E02', 'E03'].map(c => code(r, c as 'E01').light)).toEqual(['green', 'green', 'green'])
   expect(code(r, 'E05').light).toBe('yellow')
 })

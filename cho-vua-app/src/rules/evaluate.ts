@@ -40,7 +40,8 @@ export function evaluateLoad(input: LoadInput): { findings: Finding[]; overall: 
   push('E04', lightFromFlag(input.plateAndLightsVisible, false), 'Hàng không được che biển số, đèn hoặc cản tầm nhìn người lái.')
 
   if (input.extendsBeyondVehicle !== false) {
-    const light = input.extendsBeyondVehicle === null ? 'yellow' : lightFromFlag(input.redMarker, false)
+    // A fitted marker settles it either way; otherwise an uncertain overhang stays a question.
+    const light = input.redMarker === true ? 'green' : input.extendsBeyondVehicle === null ? 'yellow' : lightFromFlag(input.redMarker, false)
     push('E05', light, 'Hàng lòi trước/sau xe phải có báo hiệu màu đỏ ở điểm đầu và điểm cuối; ban đêm phải có đèn.')
   }
 
