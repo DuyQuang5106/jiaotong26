@@ -30,6 +30,14 @@ export interface LoadInput {
   vehicleMaxKg: number | null
 }
 
+/** What a vehicle's cargo bed must hold. Vehicles are chosen against the upper bounds. */
+export interface CargoRequirement {
+  lengthCm: Interval
+  widthCm: Interval
+  heightCm: Interval
+  weightKg: Interval | null
+}
+
 export interface Finding {
   code: ErrorCode
   light: Light
